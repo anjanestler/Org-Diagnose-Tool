@@ -189,50 +189,50 @@ if st.session_state.bereich_index >= len(bereiche):
     st.subheader("Weiterführende Einordnung")
     st.write("""
 
-    Die Ergebnisse geben erste Hinweise auf zugrunde liegende Dynamiken. 
+    Die Ergebnisse geben erste Hinweise auf zugrunde liegende Dynamiken.
     Erfahrungsgemaess zeigt sich die eigentliche Wirkung jedoch erst im gemeinsamen
-    Blick des Fuehrungsteams auf konkrete Situationen. 
+    Blick des Fuehrungsteams auf konkrete Situationen.
     Ich unterstütze Sie gern dabei, die Ergebnisse einzuordnen und konkrete Ansatzpunkte für Ihre Organisation abzuleiten.
 
     """)
 
-st.markdown("---")
-st.subheader("Ausfuehrlicher Ergebnisbericht")
-st.write(
-    "Der vollstaendige Bericht enthaelt eine tiefergehende Einordnung: "
-    "systemische Muster, Entwicklungshebel und ein Gesamtbild – "
-    "als PDF zum Speichern und Teilen."
-)
-
-mail = st.text_input("Ihre E-Mail-Adresse", placeholder="name@beispiel.de")
-
-if mail and "@" in mail:
-    pdf_buffer = erstelle_pdf(
-        vd=vd,
-        ps=ps,
-        fw=fw,
-        muster=muster,
-        kontext=st.session_state.get("kontext", "Organisation"),
-        sekundaer=diagnose.get("sekundaeres_muster"),
+    st.markdown("---")
+    st.subheader("Ausfuehrlicher Ergebnisbericht")
+    st.write(
+        "Der vollstaendige Bericht enthaelt eine tiefergehende Einordnung: "
+        "systemische Muster, Entwicklungshebel und ein Gesamtbild – "
+        "als PDF zum Speichern und Teilen."
     )
-    st.download_button(
-        label="Bericht herunterladen (PDF)",
-        data=pdf_buffer,
-        file_name="organisationsdiagnose.pdf",
-        mime="application/pdf",
+
+    mail = st.text_input("Ihre E-Mail-Adresse", placeholder="name@beispiel.de")
+
+    if mail and "@" in mail:
+        pdf_buffer = erstelle_pdf(
+            vd=vd,
+            ps=ps,
+            fw=fw,
+            muster=muster,
+            kontext=st.session_state.get("kontext", "Organisation"),
+            sekundaer=diagnose.get("sekundaeres_muster"),
+        )
+        st.download_button(
+            label="Bericht herunterladen (PDF)",
+            data=pdf_buffer,
+            file_name="organisationsdiagnose.pdf",
+            mime="application/pdf",
+        )
+    elif mail:
+        st.caption("Bitte eine gueltige E-Mail-Adresse eingeben.")
+
+    st.markdown("---")
+    st.write(
+        "Die Ergebnisse geben erste Hinweise. "
+        "Ich unterstuetze Sie gern dabei, sie einzuordnen."
     )
-elif mail:
-    st.caption("Bitte eine gueltige E-Mail-Adresse eingeben.")
+    if st.button("Einordnungsgespraech buchen"):
+        st.markdown("[Jetzt buchen](https://calendly.com/anja-nestler/30min)")
 
-st.markdown("---")
-st.write(
-    "Die Ergebnisse geben erste Hinweise. "
-    "Ich unterstuetze Sie gern dabei, sie einzuordnen."
-)
-if st.button("Einordnungsgespraech buchen"):
-    st.markdown("[Jetzt buchen](https://calendly.com/anja-nestler/30min)")
-
-st.stop()
+    st.stop()
 
 # -------------------------
 # FRAGENLOGIK
