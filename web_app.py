@@ -1,4 +1,5 @@
 import streamlit as st
+from diagnose_report import erstelle_pdf
 
 from diagnose_engine import (
 
@@ -195,10 +196,43 @@ if st.session_state.bereich_index >= len(bereiche):
 
     """)
 
-    if st.button("Ergebnisse gemeinsam einordnen"):
+st.markdown("---")
+st.subheader("Ausfuehrlicher Ergebnisbericht")
+st.write(
+    "Der vollstaendige Bericht enthaelt eine tiefergehende Einordnung: "
+    "systemische Muster, Entwicklungshebel und ein Gesamtbild – "
+    "als PDF zum Speichern und Teilen."
+)
 
-        st.markdown("[Termin für Einordnungsgespräch buchen](https://calendly.com/anja-nestler/30min)")
-    st.stop()
+mail = st.text_input("Ihre E-Mail-Adresse", placeholder="name@beispiel.de")
+
+if mail and "@" in mail:
+    pdf_buffer = erstelle_pdf(
+        vd=vd,
+        ps=ps,
+        fw=fw,
+        muster=muster,
+        kontext=st.session_state.get("kontext", "Organisation"),
+        sekundaer=diagnose.get("sekundaeres_muster"),
+    )
+    st.download_button(
+        label="Bericht herunterladen (PDF)",
+        data=pdf_buffer,
+        file_name="organisationsdiagnose.pdf",
+        mime="application/pdf",
+    )
+elif mail:
+    st.caption("Bitte eine gueltige E-Mail-Adresse eingeben.")
+
+st.markdown("---")
+st.write(
+    "Die Ergebnisse geben erste Hinweise. "
+    "Ich unterstuetze Sie gern dabei, sie einzuordnen."
+)
+if st.button("Einordnungsgespraech buchen"):
+    st.markdown("[Jetzt buchen](https://calendly.com/anja-nestler/30min)")
+
+st.stop()
 
 # -------------------------
 # FRAGENLOGIK
