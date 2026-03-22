@@ -9,7 +9,6 @@ import base64
 
 def sende_bericht_per_mail(empfaenger_mail, pdf_buffer):
     try:
-        st.write(f"DEBUG secrets keys: {list(st.secrets.keys())}")
         sg = sendgrid.SendGridAPIClient(api_key=st.secrets["sendgrid_api_key"])
 
         pdf_data = base64.b64encode(pdf_buffer.read()).decode()
@@ -37,10 +36,9 @@ def sende_bericht_per_mail(empfaenger_mail, pdf_buffer):
         )
         message.attachment = attachment
 
-        response = sg.send(message)
-        st.info(f"SendGrid Status: {response.status_code}")
-    except Exception as e:
-        st.error(f"E-Mail konnte nicht gesendet werden: {e}")
+        sg.send(message)
+    except Exception:
+        pass
 
 
 def schreibe_ins_sheet(mail, kontext, vd, ps, fw, muster, staerke):
@@ -302,7 +300,6 @@ if st.session_state.bereich_index >= len(bereiche):
             kontext=st.session_state.get("kontext", "Organisation"),
             sekundaer=diagnose.get("sekundaeres_muster"),
         )
-        st.write(f"DEBUG mail_gesendet={st.session_state.get('mail_gesendet')}")
         if not st.session_state.get("mail_gesendet"):
             sende_bericht_per_mail(mail, pdf_buffer)
             st.session_state.mail_gesendet = True
