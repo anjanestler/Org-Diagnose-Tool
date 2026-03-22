@@ -36,9 +36,10 @@ def sende_bericht_per_mail(empfaenger_mail, pdf_buffer):
         )
         message.attachment = attachment
 
-        sg.send(message)
-    except Exception:
-        pass
+        response = sg.send(message)
+        st.info(f"SendGrid Status: {response.status_code}")
+    except Exception as e:
+        st.error(f"E-Mail konnte nicht gesendet werden: {e}")
 
 
 def schreibe_ins_sheet(mail, kontext, vd, ps, fw, muster, staerke):
@@ -300,7 +301,10 @@ if st.session_state.bereich_index >= len(bereiche):
             kontext=st.session_state.get("kontext", "Organisation"),
             sekundaer=diagnose.get("sekundaeres_muster"),
         )
-        sende_bericht_per_mail(mail, pdf_buffer)
+        st.write(f"DEBUG mail_gesendet={st.session_state.get('mail_gesendet')}")
+        if not st.session_state.get("mail_gesendet"):
+            sende_bericht_per_mail(mail, pdf_buffer)
+            st.session_state.mail_gesendet = True
         pdf_buffer.seek(0)
         st.download_button(
             label="Bericht herunterladen (PDF)",
