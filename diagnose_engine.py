@@ -32,7 +32,7 @@ def score_einordnung(score):
 def berechne_diagnose(vd, ps, fw, kontext, ton):
     muster = bestimme_systemmuster(vd, ps, fw)
     staerke = muster_staerke(vd, ps, fw)
-    sekundaer = sekundaeres_muster(vd, ps, fw)
+    sekundaer = sekundaeres_muster(vd, ps, fw, exclude=muster)
 
     ergebnis = {
         "muster": muster,
@@ -59,7 +59,7 @@ def muster_staerke(vd, ps, fw):
     else:
         return "deutlich ausgepraegt"
     
-def sekundaeres_muster(vd, ps, fw):
+def sekundaeres_muster(vd, ps, fw, exclude=None):
     werte = {
         "Verantwortungslogik": vd,
         "Psychologische Sicherheit": ps,
@@ -67,14 +67,17 @@ def sekundaeres_muster(vd, ps, fw):
     }
     sortiert = sorted(werte.items(), key=lambda x: abs(x[1] - 3), reverse=True)
 
-    zweit = sortiert[1][0]
-
     mapping = {
         "Verantwortungslogik": "Strukturproblem",
         "Psychologische Sicherheit": "Schutz und Inkonsistenz",
         "Fuehrungswirksamkeit": "Anpassung"
     }
-    return mapping.get(zweit)
+
+    for dim, _ in sortiert[1:]:
+        kandidat = mapping.get(dim)
+        if kandidat != exclude:
+            return kandidat
+    return None
 
 def typische_auswirkungen(muster):
     texte = {

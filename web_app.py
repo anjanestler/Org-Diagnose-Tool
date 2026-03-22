@@ -298,7 +298,7 @@ if st.session_state.bereich_index >= len(bereiche):
             fw=fw,
             muster=muster,
             kontext=st.session_state.get("kontext", "Organisation"),
-            sekundaer=diagnose.get("sekundaeres_muster"),
+            sekundaer=diagnose.get("sekundaeres_muster") if diagnose.get("sekundaeres_muster") != muster else None,
         )
         if not st.session_state.get("mail_gesendet"):
             sende_bericht_per_mail(mail, pdf_buffer)

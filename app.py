@@ -248,7 +248,7 @@ def zeige_ergebnis():
     )
     sekundaer = diagnose["sekundaeres_muster"]
 
-    if sekundaer:
+    if sekundaer and sekundaer != muster:
         ergebnis_text += f"\nSekundaeres Muster: {sekundaer}\n"
     for i, score in enumerate(bereich_scores):
         name = bereiche[i]["name"]
