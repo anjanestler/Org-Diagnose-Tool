@@ -9,6 +9,7 @@ import base64
 
 def sende_bericht_per_mail(empfaenger_mail, pdf_buffer):
     try:
+        st.write(f"DEBUG secrets keys: {list(st.secrets.keys())}")
         sg = sendgrid.SendGridAPIClient(api_key=st.secrets["sendgrid_api_key"])
 
         pdf_data = base64.b64encode(pdf_buffer.read()).decode()
