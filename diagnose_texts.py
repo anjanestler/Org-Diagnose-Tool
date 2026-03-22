@@ -44,7 +44,7 @@ Fordern Sie jetzt den ausführlichen Bericht an."""
 
         "Schutz und Inkonsistenz": {
             "Organisation":
-            """In Ihrer Organisation gibt es Hinweise darauf, dass wichtige Themen nicht immer offen angesprochen werden und dass Führung nicht durchgängig klare Orientierung gibt. Beides zusammen führt dazu, dass Mitarbeitende und mittlere Führungskräfte oft im Unklaren bleiben, was wirklich erwartet wird.
+            """In Ihrer Organisation gibt es Hinweise darauf, dass Mitarbeitende Ihnen nicht alles sagen – und dass die Signale, die Führung sendet, nicht immer einheitlich ankommen. Beides zusammen führt dazu, dass Mitarbeitende und mittlere Führungskräfte oft im Unklaren bleiben, was wirklich erwartet wird.
 
 Das ist kein Versagen einzelner Personen. Es ist ein Muster, das sich über Zeit entwickelt und das sich verändern lässt.
 
@@ -63,7 +63,7 @@ Wie diese Muster in Ihrer konkreten Situation zusammenwirken und wo sinnvolle An
 Fordern Sie jetzt den ausführlichen Bericht an.""",
 
             "Fuehrungsteam":
-            """In Ihrem Führungsteam gibt es Hinweise darauf, dass nicht alles offen angesprochen wird und dass die Signale die Führung sendet nicht immer einheitlich ankommen. Das verunsichert und führt zu Vorsicht statt Klarheit.
+            """In Ihrem Führungsteam gibt es Hinweise darauf, dass nicht alles offen angesprochen wird – und dass die Signale, die Führung sendet, nicht immer einheitlich ankommen. Das verunsichert und führt dazu, dass man lieber vorsichtig ist als klar zu handeln.
 
 Das ist kein Versagen einzelner Personen. Es ist ein Muster das sich über Zeit entwickelt – und das sich verändern lässt.
 
@@ -75,7 +75,7 @@ Typische Anzeichen:
 Was das im Alltag bedeutet:
 - Entscheidungen werden formal getroffen, aber nicht wirklich gemeinsam getragen
 - Einzelne ziehen sich zurück oder agieren auf Sicherheit
-- Die kollektive Wirksamkeit des Teams leidet
+- Das Team kann sein Potenzial nicht voll entfalten
 
 Wie diese Muster in Ihrem Führungsteam zusammenwirken und wo sinnvolle Ansatzpunkte liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
 
@@ -145,7 +145,7 @@ Das sind gute Voraussetzungen – und ein solides Fundament für gezielte Weiter
 Was das im Alltag bedeutet:
 - Gemeinsame Ausrichtung ist erkennbar
 - Konflikte werden konstruktiv bearbeitet
-- Das Team kann als kollektive Führungskraft wirken
+- Das Team kann gemeinsam Führung übernehmen und wirksam gestalten
 
 Wo liegen die nächsten Entwicklungsschritte? Und wie lassen sich die vorhandenen Stärken noch bewusster nutzen? Das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
 
@@ -176,10 +176,10 @@ Fordern Sie jetzt den ausführlichen Bericht an.""",
 Typische Anzeichen:
 - In manchen Situationen läuft die Zusammenarbeit reibungslos, in anderen nicht
 - Verantwortung und Orientierung sind teilweise klar, teilweise noch offen
-- Die kollektive Wirksamkeit des Teams ist noch nicht voll ausgeschöpft
+- Das Team schöpft sein gemeinsames Potenzial noch nicht voll aus
 
 Was das im Alltag bedeutet:
-- Unterschiedliche Dynamiken wirken parallel und führen zu inkonsistenter Ausrichtung
+- Verschiedene Bereiche ziehen nicht immer am selben Strang
 - Einzelne Stärken werden noch nicht durchgängig genutzt
 - Gezielte Klärung könnte die Teamwirksamkeit deutlich steigern
 

@@ -177,7 +177,7 @@ def einordnung_im_kontext(muster, kontext):
         "Gemischtes Muster": {
             "Fuehrungsteam": [
                 "Ihr Führungsteam zeigt ein gemischtes Bild: Einige Bereiche laufen gut, in anderen gibt es noch Klärungsbedarf.",
-                "Die kollektive Wirksamkeit des Teams ist noch nicht voll ausgeschöpft.",
+                "Das Team schöpft sein gemeinsames Potenzial noch nicht voll aus.",
             ],
             "Organisation": [
                 "Ihre Organisation zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf.",
@@ -236,13 +236,13 @@ def entwicklungshebel(vd, ps, fw):
         hebel += [
             "Sprechen Sie als Führung Unsicherheiten und Fehler offen an. Das gibt anderen die Erlaubnis, es auch zu tun.",
             "Schaffen Sie Räume, in denen kritische Themen ohne Konsequenzen benannt werden können.",
-            "Psychologische Sicherheit entsteht durch konsequentes Verhalten, nicht durch Appelle.",
+            "Vertrauen entsteht durch konsequentes Verhalten, nicht durch Worte.",
         ]
     if fw < 3:
         hebel += [
             "Formulieren Sie klare Erwartungen und setzen Sie sichtbar Prioritäten.",
             "Reflektieren Sie gemeinsam, wo Anspruch und gelebte Praxis auseinanderfallen.",
-            "Bringen Sie das gemeinsame Zielbild regelmäßig mit der operativen Realität in Verbindung.",
+            "Prüfen Sie regelmäßig, ob Ihre gemeinsamen Ziele noch zum Alltag passen.",
         ]
     if vd >= 3 and ps >= 3 and fw >= 3:
         hebel += [
@@ -257,7 +257,7 @@ def gesamtbild_texte(muster, kontext, auspraegung):
         "Stabil": {
             "Fuehrungsteam": [
                 "Ihr Führungsteam arbeitet auf einer tragfähigen Grundlage.",
-                "Gemeinsame Orientierung und klare Verantwortung ermöglichen kollektive Wirksamkeit.",
+                "Gemeinsame Orientierung und klare Verantwortung machen das Team handlungsfähig.",
                 "Der nächste Schritt liegt darin, vorhandene Stärken bewusst zu nutzen und gezielt weiterzuentwickeln.",
             ],
             "Organisation": [
@@ -280,13 +280,13 @@ def gesamtbild_texte(muster, kontext, auspraegung):
         },
         "Schutz und Inkonsistenz": {
             "Fuehrungsteam": [
-                "In Ihrem Führungsteam entsteht durch fehlende Sicherheit und inkonsistente Orientierung ein Muster, das kollektive Wirksamkeit einschränkt.",
-                "Widersprüchliche Signale im Führungshandeln fördern Reaktivität statt gemeinsame Ausrichtung.",
+                "In Ihrem Führungsteam entsteht durch mangelnde Offenheit und widersprüchliche Signale ein Muster, das gemeinsames Handeln erschwert.",
+                "Wenn Führung unterschiedliche Signale sendet, warten Mitarbeitende lieber ab – statt Verantwortung zu übernehmen.",
                 "Entwicklung setzt dort an, wo Orientierung, Konsistenz und offene Rückmeldung gestärkt werden.",
             ],
             "Organisation": [
                 "In Ihrer Organisation entsteht durch fehlende Sicherheit und inkonsistente Führung ein Muster, das gemeinsame Wirksamkeit einschränkt.",
-                "Wechselnde Prioritäten und unklare Signale fördern Reaktivität statt Eigenverantwortung.",
+                "Wechselnde Prioritäten und unklare Ansagen führen dazu, dass Mitarbeitende abwarten statt eigenständig zu handeln.",
                 "Entwicklung setzt dort an, wo Orientierung, Konsistenz und offene Rückmeldung bewusster gestärkt werden.",
             ],
         },
@@ -305,12 +305,12 @@ def gesamtbild_texte(muster, kontext, auspraegung):
         "Gemischtes Muster": {
             "Fuehrungsteam": [
                 "Ihr Führungsteam zeigt ein gemischtes Bild mit stabilen und klärungsbedürftigen Bereichen.",
-                "Unterschiedliche Dynamiken wirken parallel und führen zu inkonsistenter Ausrichtung.",
+                "Verschiedene Bereiche ziehen nicht immer am selben Strang.",
                 "Entwicklung setzt dort an, wo diese Muster bewusster wahrgenommen und gemeinsam integriert werden.",
             ],
             "Organisation": [
                 "Ihre Organisation zeigt ein gemischtes Bild mit stabilen und klärungsbedürftigen Bereichen.",
-                "Unterschiedliche Dynamiken wirken parallel und führen zu inkonsistenter Orientierung.",
+                "Verschiedene Bereiche ziehen nicht immer am selben Strang.",
                 "Entwicklung setzt dort an, wo diese Muster bewusster wahrgenommen und gemeinsam geklärt werden.",
             ],
         },
@@ -461,8 +461,8 @@ def erstelle_pdf(vd, ps, fw, muster, kontext, sekundaer=None):
         story.append(Paragraph("Ergänzender Hinweis", styles["section"]))
         story.append(Paragraph(
             f"Neben dem Hauptmuster zeigen sich ergänzend Hinweise auf: <b>{sekundaer}</b>. "
-            "Dieses Muster tritt weniger dominant auf, kann aber die Gesamtdynamik mitprägen "
-            "und sollte bei der Weiterentwicklung im Blick behalten werden.",
+            "Dieses Muster tritt weniger stark auf, kann aber das Gesamtbild beeinflussen "
+            "und sollte bei der weiteren Entwicklung nicht außer Acht gelassen werden.",
             styles["body"]
         ))
         story.append(Spacer(1, 0.2 * cm))
