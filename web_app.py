@@ -23,8 +23,8 @@ def schreibe_ins_sheet(mail, kontext, vd, ps, fw, muster, staerke):
             staerke,
         ]
         sheet.append_row(zeile)
-    except Exception as e:
-        st.error(f"Sheet-Fehler: {e}")
+    except Exception:
+        pass
 
 
 from diagnose_engine import (
