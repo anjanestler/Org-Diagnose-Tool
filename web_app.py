@@ -68,7 +68,7 @@ bereiche = [
 
             {"text": "Entscheidungen haben klare Verantwortlichkeiten.", "reverse": False},
 
-           {"text": "Zustaendigkeiten sind eindeutig geklaert.", "reverse": False},
+           {"text": "Zuständigkeiten sind eindeutig geklärt.", "reverse": False},
 
             {"text": "Themen bleiben oft ohne Abschluss.", "reverse": True}
 
@@ -86,7 +86,7 @@ bereiche = [
 
             {"text": "In Meetings sagen oft viele nicht, was sie wirklich denken.", "reverse": True},
 
-            {"text": "Fehler koennen ohne negative Konsequenzen benannt werden.", "reverse": False}
+            {"text": "Fehler können ohne negative Konsequenzen benannt werden.", "reverse": False}
 
         ]
 
@@ -94,15 +94,15 @@ bereiche = [
 
     {
 
-        "name": "Fuehrungswirksamkeit",
+        "name": "Führungswirksamkeit",
 
         "fragen": [
 
             {"text": "Strategische Orientierung ist im Alltag klar erkennbar.", "reverse": False},
 
-            {"text": "Fuehrung kommuniziert Erwartungen klar und konsistent.", "reverse": False},
+            {"text": "Führung kommuniziert Erwartungen klar und konsistent.", "reverse": False},
 
-            {"text": "Strategie und taegliche Arbeit sind oft entkoppelt.", "reverse": True}
+            {"text": "Strategie und tägliche Arbeit sind oft entkoppelt.", "reverse": True}
 
         ]
 
@@ -122,7 +122,7 @@ if not st.session_state.gestartet:
     st.write("""
 
     Diese Diagnose macht sichtbar, wie Verantwortung, psychologische Sicherheit 
-    und Fuehrungswirksamkeit im Alltag Ihres Fuehrungsteams zusammenwirken 
+    und Führungswirksamkeit im Alltag Ihres Führungsteams zusammenwirken
     und welche Auswirkungen das auf Entscheidung und Umsetzung hat.
 
     """)
@@ -204,7 +204,7 @@ if st.session_state.bereich_index >= len(bereiche):
 
         "Verantwortungslogik",
         "Psychologische Sicherheit",
-        "Fuehrungswirksamkeit"
+        "Führungswirksamkeit"
     ]
 
     for name, score in zip(labels, bereich_scores):
@@ -216,16 +216,16 @@ if st.session_state.bereich_index >= len(bereiche):
     st.write("""
 
     Die Ergebnisse geben erste Hinweise auf zugrunde liegende Dynamiken.
-    Erfahrungsgemaess zeigt sich die eigentliche Wirkung jedoch erst im gemeinsamen
-    Blick des Fuehrungsteams auf konkrete Situationen.
+    Erfahrungsgemäß zeigt sich die eigentliche Wirkung jedoch erst im gemeinsamen
+    Blick des Führungsteams auf konkrete Situationen.
     Ich unterstütze Sie gern dabei, die Ergebnisse einzuordnen und konkrete Ansatzpunkte für Ihre Organisation abzuleiten.
 
     """)
 
     st.markdown("---")
-    st.subheader("Ausfuehrlicher Ergebnisbericht")
+    st.subheader("Ausführlicher Ergebnisbericht")
     st.write(
-        "Der vollstaendige Bericht enthaelt eine tiefergehende Einordnung: "
+        "Der vollständige Bericht enthält eine tiefergehende Einordnung: "
         "systemische Muster, Entwicklungshebel und ein Gesamtbild – "
         "als PDF zum Speichern und Teilen."
     )
@@ -272,14 +272,14 @@ if st.session_state.bereich_index >= len(bereiche):
     elif mail and not datenschutz:
         st.caption("Bitte bestätigen Sie die Datenschutzerklärung.")
     elif mail:
-        st.caption("Bitte eine gueltige E-Mail-Adresse eingeben.")
+        st.caption("Bitte eine gültige E-Mail-Adresse eingeben.")
 
     st.markdown("---")
     st.write(
         "Die Ergebnisse geben erste Hinweise. "
-        "Ich unterstuetze Sie gern dabei, sie einzuordnen."
+        "Ich unterstütze Sie gern dabei, sie einzuordnen."
     )
-    if st.button("Einordnungsgespraech buchen"):
+    if st.button("Einordnungsgespräch buchen"):
         st.markdown("[Jetzt buchen](https://calendly.com/anja-nestler/30min)")
 
     st.stop()
