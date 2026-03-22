@@ -2,3 +2,4 @@ streamlit
 reportlab
 gspread
 google-auth
+sendgrid
