@@ -4,131 +4,199 @@ def diagnose_text(muster, kontext="Organisation", ton="reflexiv"):
     texte = {
         "Anpassung": {
             "Organisation":
-            """Im System zeigen sich Hinweise auf eine Anpassungsdynamik.
-            In solchen Situationen bleibt Verantwortung haeufig implizit,
-            waehrend Spannungen selten offen geklaert werden. Das System
-            stabilisiert sich eher durch Anpassung als durch offene Klaerung
-            von Erwartungen und Zustaendigkeiten.
+            """In Ihrer Organisation gibt es Hinweise darauf, dass Verantwortung oft nicht klar geregelt ist – und dass Spannungen eher still getragen als offen geklärt werden. Das Ergebnis: Entscheidungen verzögern sich, Themen bleiben ohne Abschluss.
 
-            Typische Anzeichen koennen sein:
-            - Verantwortung bleibt implizit oder diffus
-            - Klaerungsgespraeche fuehren zu abstrakten Kompromissen
-            - Entscheidungen und Umsetzung verzoegern sich
+Das ist kein Zeichen von schlechtem Willen. Es ist ein Muster das sich eingeschlichen hat – und das sich verändern lässt.
 
-            Wenn diese Dynamik laenger besteht, zeigen sich haeufig:
-            - Ueberlastung einzelner
-            - Rueckzug oder vorsichtiges Verhalten anderer
-            - Verlust von Leistungstraeger_innen
+Typische Anzeichen:
+- Zuständigkeiten sind unklar oder werden stillschweigend vorausgesetzt
+- Konflikte werden eher umgangen als direkt angesprochen
+- Loyalität steht oft vor offener Klärung
 
-            Organisationen reagieren in dieser Situation haeufig mit
-            Aktionismus (z. B. neue Projekte oder Regeln). Diese Reaktionen
-            sind verstaendlich, veraendern jedoch meist nicht die
-            zugrunde liegende Dynamik. 
+Was das im Alltag bedeutet:
+- Einzelne tragen überproportional viel Verantwortung
+- Themen kommen immer wieder auf den Tisch ohne echten Abschluss
+- Die Umsetzung von Entscheidungen stockt
 
-            Ein erster sinnvoller Entwicklungsschritt kann darin bestehen, 
-            unterschiedliche Perspektiven sichtbar zu machen und Vertrauen
-            fuer offene Klaerung zu staerken. 
-            """,
+Wie diese Muster in Ihrer konkreten Situation zusammenwirken – und wo sinnvolle Ansatzpunkte liegen – das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+
+Fordern Sie jetzt den ausführlichen Bericht an.""",
 
             "Fuehrungsteam":
-            """Im Fuehrungsteam zeigen sich Hinweise auf eine Anpassungsdynamik.
+            """In Ihrem Führungsteam gibt es Hinweise darauf, dass Verantwortung nicht immer klar abgestimmt ist – und dass Spannungen eher durch Anpassung als durch offene Klärung bewältigt werden.
 
-            Verantwortung wird teilweise individuell getragen, ohne
-            durchgaengig klar abgestimmt zu sein. Spannungen werden
-            haeufig eher durch Anpassung als durch offene Klaerung
-            verarbeitet.
+Das ist kein Versagen einzelner Personen. Es ist ein Muster das sich über Zeit entwickelt – und das sich verändern lässt.
 
-            Typische Anzeichen koennen sein:
-            - Themen bleiben ohne klaren Abschluss
-            - Erwartungen bleiben implizit
-            - Entscheidungen verzoegern sich
+Typische Anzeichen:
+- Erwartungen bleiben implizit statt ausgesprochen
+- Themen werden besprochen aber selten wirklich abgeschlossen
+- Im Team wird Harmonie manchmal über Klarheit gestellt
 
-            Ein erster sinnvoller Schritt kann darin bestehen,
-            unterschiedliche Perspektiven sichtbar zu machen und
-            Vertrauen fuer offene Klaerung zu staerken.
-            """
+Was das im Alltag bedeutet:
+- Entscheidungen verzögern sich oder werden mehrfach neu aufgerollt
+- Die gemeinsame Ausrichtung leidet
+- Einzelne fühlen sich mit Verantwortung allein gelassen
+
+Wie diese Muster in Ihrem Führungsteam zusammenwirken – und wo sinnvolle Ansatzpunkte liegen – das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+
+Fordern Sie jetzt den ausführlichen Bericht an."""
         },
-        
-        "Schutz und Inkonsistenz":
-            """Die Diagnose weist auf eine Dynamik von Schutz und inkonsistenter 
-            Orientierung hin.
 
+        "Schutz und Inkonsistenz": {
+            "Organisation":
+            """In Ihrer Organisation gibt es Hinweise darauf, dass wichtige Themen nicht immer offen angesprochen werden – und dass Führung nicht durchgängig klare Orientierung gibt. Beides zusammen führt dazu, dass Mitarbeitende und mittlere Führungskräfte oft im Unklaren bleiben, was wirklich erwartet wird.
 
-            In solchen Situationen wird nicht jede Spannung offen
-            angesprochen, waehrend Fuehrung gleichzeitig unterschiedliche 
-            oder wechselnde Signale sendet.
+Das ist kein Versagen einzelner Personen. Es ist ein Muster das sich über Zeit entwickelt – und das sich verändern lässt.
 
-            Typische Anzeichen koennen sein:
-            - offensichtliche Probleme werden selten offen angesprochen
-            - zwischen Organisation und oberster Leitung entsteht Distanz
-            - Prioritaeten wirken wechselhaft oder unklar
+Typische Anzeichen:
+- Probleme werden wahrgenommen, aber selten direkt angesprochen
+- Prioritäten wirken von oben nicht immer einheitlich
+- Zwischen Führung und Organisation entsteht zunehmend Distanz
 
-            Diese Dynamik kann dazu fuehren, dass mittlere Fuehrungsebenen 
-            unter hoher Dissonanzbelastung stehen und Orientierung verlieren.
+Was das im Alltag bedeutet:
+- Entscheidungen werden getroffen, aber nicht von allen mitgetragen
+- Erwartungen werden unterschiedlich verstanden
+- Themen kommen immer wieder auf den Tisch ohne wirklichen Abschluss
 
-            Ein erster Entwicklungsschritt kann darin bestehen,
-            Rueckmeldeschleifen zwischen Organisation und Fuehrung zu
-            staerken und widerspruechliche Erwartungen sichtbar zu machen. 
-            """,
+Wie diese Muster in Ihrer konkreten Situation zusammenwirken – und wo sinnvolle Ansatzpunkte liegen – das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
 
-        "Strukturproblem":
-            """Die Ergebnisse deuten auf strukturelle Unklarheit in
-            Verantwortungs- und Entscheidungslogiken hin.
-        
-            Typische Anzeichen koennen sein:
-            - Entscheidungen werden mehrfach adressiert
-            - Themen zirkulieren zwischen Rollen
-            - Verantwortlichkeiten bleiben unklar
-        
-            Diese Dynamik erschwert verbindliche Umsetzung und kann
-            zu Frustration oder Verzoegerungen fuehren.
-        
-            Ein sinnvoller erster Schritt kann darin bestehen,
-            Entscheidungswege und Verantwortungslogiken gemeinsam
-            zu klaeren.
-            """,
+Fordern Sie jetzt den ausführlichen Bericht an.""",
 
-        "Stabil":
-            """Die Ergebnisse weisen auf grundsaetzlich tragfaehige
-            Strukturen in Verantwortung, psychologischer Sicherheit und 
-            Fuehrung hin.
-        
-            Prioritaeten sind meist klar, Spannungen koennen
-            angesprochen werden und Verantwortung wird uebernommen.
+            "Fuehrungsteam":
+            """In Ihrem Führungsteam gibt es Hinweise darauf, dass nicht alles offen angesprochen wird – und dass die Signale die Führung sendet nicht immer einheitlich ankommen. Das verunsichert und führt zu Vorsicht statt Klarheit.
 
-            Dies schafft gute Voraussetzungen fuer gezielte
-            Weiterentwicklung.
+Das ist kein Versagen einzelner Personen. Es ist ein Muster das sich über Zeit entwickelt – und das sich verändern lässt.
 
-            """,
+Typische Anzeichen:
+- Kritische Themen werden im Team eher umgangen
+- Erwartungen werden unterschiedlich interpretiert
+- Die gemeinsame Ausrichtung wirkt nicht immer stabil
 
-        "Gemischtes Muster":
-            """Die Ergebnisse zeigen eine Mischung aus stabilen
-            und spannungsanfaelligen Dynamiken.
+Was das im Alltag bedeutet:
+- Entscheidungen werden formal getroffen aber nicht wirklich gemeinsam getragen
+- Einzelne ziehen sich zurück oder agieren auf Sicherheit
+- Die kollektive Wirksamkeit des Teams leidet
 
-            Einige Bereiche funktionieren gut, waehrend andere
-            noch Klaerungsbedarf aufweisen.
+Wie diese Muster in Ihrem Führungsteam zusammenwirken – und wo sinnvolle Ansatzpunkte liegen – das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
 
-            Eine gemeinsame Reflexion der unterschiedlichen 
-            Perspektiven kann helfen, diese Muster besser
-            zu verstehen.
-            """
+Fordern Sie jetzt den ausführlichen Bericht an."""
+        },
+
+        "Strukturproblem": {
+            "Organisation":
+            """In Ihrer Organisation gibt es Hinweise darauf, dass Verantwortung und Entscheidungswege nicht klar genug geregelt sind. Themen wandern zwischen Rollen, Zuständigkeiten bleiben unklar – und die Umsetzung stockt.
+
+Das ist kein Zeichen von mangelndem Engagement. Es ist ein strukturelles Muster – und das lässt sich klären.
+
+Typische Anzeichen:
+- Es ist nicht immer klar wer Entscheidungen treffen darf oder soll
+- Verantwortung wird übergeben ohne dass Mandat und Rückendeckung gesichert sind
+- Themen werden mehrfach besprochen ohne verbindlichen Abschluss
+
+Was das im Alltag bedeutet:
+- Initiativen verlieren unterwegs an Verbindlichkeit
+- Frustration entsteht weil Klärung ausbleibt
+- Einzelne fühlen sich verantwortlich ohne wirklich entscheiden zu können
+
+Wie diese Muster in Ihrer konkreten Situation zusammenwirken – und wo sinnvolle Ansatzpunkte liegen – das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+
+Fordern Sie jetzt den ausführlichen Bericht an.""",
+
+            "Fuehrungsteam":
+            """In Ihrem Führungsteam gibt es Hinweise darauf, dass Rollen, Mandate und Entscheidungswege nicht durchgängig klar sind. Das erschwert verbindliche Zusammenarbeit – und kostet Energie die anderswo fehlt.
+
+Das ist kein Zeichen von mangelndem Engagement. Es ist ein strukturelles Muster – und das lässt sich klären.
+
+Typische Anzeichen:
+- Zuständigkeiten überlappen oder bleiben ungeklärt
+- Entscheidungen werden mehrfach aufgerufen ohne Abschluss
+- Einzelne tragen Verantwortung ohne ausreichende Rückendeckung
+
+Was das im Alltag bedeutet:
+- Die kollektive Führungswirksamkeit ist eingeschränkt
+- Themen zirkulieren im Team ohne voranzukommen
+- Verbindlichkeit entsteht nicht verlässlich
+
+Wie diese Muster in Ihrem Führungsteam zusammenwirken – und wo sinnvolle Ansatzpunkte liegen – das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+
+Fordern Sie jetzt den ausführlichen Bericht an."""
+        },
+
+        "Stabil": {
+            "Organisation":
+            """Ihre Organisation zeigt in allen drei Bereichen grundsätzlich tragfähige Strukturen. Verantwortung wird übernommen, Spannungen können angesprochen werden und Führung gibt Orientierung.
+
+Das sind gute Voraussetzungen – und ein solides Fundament für gezielte Weiterentwicklung.
+
+Was das im Alltag bedeutet:
+- Entscheidungen kommen zu einem Abschluss
+- Themen werden offen und konstruktiv besprochen
+- Die Zusammenarbeit ist auf gemeinsame Ziele ausgerichtet
+
+Wo liegen die nächsten Entwicklungsschritte? Und wie lassen sich die vorhandenen Stärken noch bewusster nutzen? Das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+
+Fordern Sie jetzt den ausführlichen Bericht an.""",
+
+            "Fuehrungsteam":
+            """Ihr Führungsteam zeigt in allen drei Bereichen grundsätzlich tragfähige Strukturen. Verantwortung ist klar, Spannungen können angesprochen werden und Orientierung ist spürbar.
+
+Das sind gute Voraussetzungen – und ein solides Fundament für gezielte Weiterentwicklung.
+
+Was das im Alltag bedeutet:
+- Gemeinsame Ausrichtung ist erkennbar
+- Konflikte werden konstruktiv bearbeitet
+- Das Team kann als kollektive Führungskraft wirken
+
+Wo liegen die nächsten Entwicklungsschritte? Und wie lassen sich die vorhandenen Stärken noch bewusster nutzen? Das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+
+Fordern Sie jetzt den ausführlichen Bericht an."""
+        },
+
+        "Gemischtes Muster": {
+            "Organisation":
+            """Ihre Organisation zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf. Das ist häufiger als man denkt – und ein guter Ausgangspunkt für gezielte Entwicklung.
+
+Typische Anzeichen:
+- Manche Entscheidungen laufen reibungslos, andere stocken
+- Psychologische Sicherheit ist situativ vorhanden aber nicht überall gleich
+- Führung wirkt in Teilen klar, in anderen Bereichen uneinheitlich
+
+Was das im Alltag bedeutet:
+- Die Zusammenarbeit ist von Bereich zu Bereich unterschiedlich
+- Potenzial liegt darin, die stabilen Muster bewusster zu nutzen
+- Klärungsbedarf in einzelnen Bereichen bremst das Gesamtsystem
+
+Wie diese Muster in Ihrer konkreten Situation zusammenwirken – und wo die wichtigsten Hebel liegen – das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+
+Fordern Sie jetzt den ausführlichen Bericht an.""",
+
+            "Fuehrungsteam":
+            """Ihr Führungsteam zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf. Das ist häufiger als man denkt – und ein guter Ausgangspunkt für gezielte Entwicklung.
+
+Typische Anzeichen:
+- In manchen Situationen läuft die Zusammenarbeit reibungslos, in anderen nicht
+- Verantwortung und Orientierung sind teilweise klar, teilweise noch offen
+- Die kollektive Wirksamkeit des Teams ist noch nicht voll ausgeschöpft
+
+Was das im Alltag bedeutet:
+- Unterschiedliche Dynamiken wirken parallel und führen zu inkonsistenter Ausrichtung
+- Einzelne Stärken werden noch nicht durchgängig genutzt
+- Gezielte Klärung könnte die Teamwirksamkeit deutlich steigern
+
+Wie diese Muster in Ihrem Führungsteam zusammenwirken – und wo die wichtigsten Hebel liegen – das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+
+Fordern Sie jetzt den ausführlichen Bericht an."""
+        }
     }
-    
-    
+
     eintrag = texte.get(muster, "")
 
     if isinstance(eintrag, dict):
-        text = eintrag.get(kontext, "")
+        text = eintrag.get(kontext, eintrag.get("Organisation", ""))
     else:
         text = eintrag
 
-    # Jede einzelne Zeile von Whitespace befreien
-    zeilen = [z.strip() for z in text.splitlines()]
-    text = "\n".join(zeilen)
-    # Mehrfache Leerzeilen auf eine reduzieren
-    while "\n\n\n" in text:
-        text = text.replace("\n\n\n", "\n\n")
-    text = text.strip()
+    text = inspect.cleandoc(text)
 
     if ton == "reflexiv":
         return text
