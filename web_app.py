@@ -3,6 +3,43 @@ import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
 from diagnose_report import erstelle_pdf
+import sendgrid
+from sendgrid.helpers.mail import Mail, Attachment, FileContent, FileName, FileType, Disposition
+import base64
+
+def sende_bericht_per_mail(empfaenger_mail, pdf_buffer):
+    try:
+        sg = sendgrid.SendGridAPIClient(api_key=st.secrets["sendgrid_api_key"])
+
+        pdf_data = base64.b64encode(pdf_buffer.read()).decode()
+
+        message = Mail(
+            from_email=st.secrets["sendgrid_from_email"],
+            to_emails=empfaenger_mail,
+            subject="Ihr Ergebnisbericht – Systemische Organisationsdiagnose",
+            html_content="""
+            <p>Vielen Dank für Ihre Teilnahme an der Systemischen Organisationsdiagnose.</p>
+            <p>Im Anhang finden Sie Ihren persönlichen Ergebnisbericht.</p>
+            <p>Ich freue mich, wenn wir die Ergebnisse gemeinsam einordnen –
+            gerne können Sie direkt einen Termin buchen:</p>
+            <p><a href="https://calendly.com/anja-nestler/30min">Einordnungsgespräch buchen</a></p>
+            <br>
+            <p>Herzliche Grüße<br>Anja Nestler</p>
+            """
+        )
+
+        attachment = Attachment(
+            FileContent(pdf_data),
+            FileName("organisationsdiagnose.pdf"),
+            FileType("application/pdf"),
+            Disposition("attachment")
+        )
+        message.attachment = attachment
+
+        sg.send(message)
+    except Exception:
+        pass
+
 
 def schreibe_ins_sheet(mail, kontext, vd, ps, fw, muster, staerke):
     try:
@@ -263,12 +300,15 @@ if st.session_state.bereich_index >= len(bereiche):
             kontext=st.session_state.get("kontext", "Organisation"),
             sekundaer=diagnose.get("sekundaeres_muster"),
         )
+        sende_bericht_per_mail(mail, pdf_buffer)
+        pdf_buffer.seek(0)
         st.download_button(
             label="Bericht herunterladen (PDF)",
             data=pdf_buffer,
             file_name="organisationsdiagnose.pdf",
             mime="application/pdf",
         )
+        st.caption("Der Bericht wurde auch an Ihre E-Mail-Adresse gesendet.")
     elif mail and not datenschutz:
         st.caption("Bitte bestätigen Sie die Datenschutzerklärung.")
     elif mail:
