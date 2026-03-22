@@ -8,25 +8,27 @@ from datetime import datetime
 from io import BytesIO
 
 from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import cm
 from reportlab.lib import colors
 from reportlab.platypus import (
     SimpleDocTemplate, Paragraph, Spacer, HRFlowable, Table, TableStyle
 )
 
-# ———————––
+
+# -------------------------
 # Farben
-# ———————––
+# -------------------------
 
 DUNKELBLAU = colors.HexColor("#1B2A4A")
 MITTELBLAU = colors.HexColor("#2E5090")
 HELLGRAU   = colors.HexColor("#F4F4F4")
 TEXTGRAU   = colors.HexColor("#333333")
 
-# ———————––
+
+# -------------------------
 # Styles
-# ———————––
+# -------------------------
 
 def erstelle_styles():
     styles = {
@@ -73,6 +75,14 @@ def erstelle_styles():
             leftIndent=14,
             bulletIndent=0,
         ),
+        "einladend": ParagraphStyle(
+            "Einladend",
+            fontName="Helvetica-Oblique",
+            fontSize=10,
+            textColor=MITTELBLAU,
+            spaceAfter=6,
+            leading=15,
+        ),
         "footer": ParagraphStyle(
             "Footer",
             fontName="Helvetica-Oblique",
@@ -81,26 +91,13 @@ def erstelle_styles():
             spaceAfter=4,
             leading=12,
         ),
-        "score_label": ParagraphStyle(
-            "ScoreLabel",
-            fontName="Helvetica-Bold",
-            fontSize=10,
-            textColor=DUNKELBLAU,
-            leading=14,
-        ),
-        "score_value": ParagraphStyle(
-            "ScoreValue",
-            fontName="Helvetica",
-            fontSize=10,
-            textColor=TEXTGRAU,
-            leading=14,
-        ),
     }
     return styles
 
-# ———————––
+
+# -------------------------
 # Hilfsfunktionen
-# ———————––
+# -------------------------
 
 def score_einordnung(score):
     if score >= 4:
@@ -110,8 +107,10 @@ def score_einordnung(score):
     else:
         return "niedrig"
 
+
 def bullet(text, styles):
-    return Paragraph(f"•   {text}", styles["bullet"])
+    return Paragraph(f"&#8226; &nbsp; {text}", styles["bullet"])
+
 
 def hr():
     return HRFlowable(
@@ -122,193 +121,197 @@ def hr():
         spaceBefore=4,
     )
 
-# ———————––
-# Inhaltliche Texte je Muster
-# ———————––
+
+# -------------------------
+# Inhaltliche Texte
+# -------------------------
 
 def einordnung_im_kontext(muster, kontext):
     texte = {
         "Anpassung": {
             "Fuehrungsteam": [
-                "Im Fuehrungsteam ist im Alltag nicht immer klar, wer Verantwortung tatsaechlich uebernimmt. Gleichzeitig wird nicht jede Situation als ausreichend sicher erlebt, um Spannungen offen anzusprechen.",
-                "Verantwortung wird haeufig individuell getragen, ohne durchgaengig klar strukturell verankert zu sein.",
-                "So entsteht eher Zurueckhaltung als offene Klaerung, wodurch Spannungen bestehen bleiben koennen.",
+                "In Ihrem Führungsteam ist nicht immer klar, wer Verantwortung tatsächlich trägt. Spannungen werden eher still bewältigt als offen geklärt.",
+                "Verantwortung liegt häufig bei Einzelnen, ohne dass das strukturell so vereinbart wäre.",
+                "So entsteht Zurückhaltung statt Klärung, und Themen bleiben länger offen als nötig.",
             ],
             "Organisation": [
-                "In der Organisation ist im Alltag nicht immer klar, wer Verantwortung tatsaechlich uebernimmt. Gleichzeitig wird nicht jede Situation als ausreichend sicher erlebt, um Spannungen offen anzusprechen.",
-                "Verantwortung wird haeufig individuell getragen, ohne durchgaengig klar strukturell verankert zu sein.",
-                "So entsteht eher Zurueckhaltung als offene Klaerung, wodurch Spannungen bestehen bleiben koennen.",
+                "In Ihrer Organisation ist nicht immer klar, wer Verantwortung tatsächlich trägt. Spannungen werden eher still bewältigt als offen geklärt.",
+                "Verantwortung liegt häufig bei Einzelnen, ohne dass das strukturell so vereinbart wäre.",
+                "So entsteht Zurückhaltung statt Klärung, und Themen bleiben länger offen als nötig.",
             ],
         },
         "Schutz und Inkonsistenz": {
             "Fuehrungsteam": [
-                "Im Fuehrungsteam wird nicht jede Situation als ausreichend sicher erlebt, um offen zu sprechen. Gleichzeitig wirkt Orientierung nicht immer konsistent.",
-                "Erwartungen bleiben teilweise unklar oder werden unterschiedlich interpretiert.",
-                "So entsteht eher Vorsicht als gestaltende Verantwortung im Alltag.",
+                "In Ihrem Führungsteam wird nicht alles offen angesprochen, und die Signale, die Führung sendet, kommen nicht immer einheitlich an.",
+                "Erwartungen bleiben teilweise unklar oder werden unterschiedlich verstanden.",
+                "Das führt zu Vorsicht und Zurückhaltung statt zu klarer gemeinsamer Ausrichtung.",
             ],
             "Organisation": [
-                "In der Organisation wird nicht jede Situation als ausreichend sicher erlebt, um offen zu sprechen. Gleichzeitig wirkt Orientierung nicht immer konsistent.",
-                "Erwartungen bleiben teilweise unklar oder werden unterschiedlich interpretiert.",
-                "So entsteht eher Vorsicht als gestaltende Verantwortung im Alltag.",
+                "In Ihrer Organisation wird nicht alles offen angesprochen. Führung gibt nicht immer konsistente Orientierung.",
+                "Erwartungen bleiben teilweise unklar oder werden unterschiedlich verstanden.",
+                "Das führt zu Vorsicht und Zurückhaltung statt zu klarer gemeinsamer Ausrichtung.",
             ],
         },
         "Strukturproblem": {
             "Fuehrungsteam": [
-                "Im Fuehrungsteam sind Verantwortung und Orientierung im Alltag nicht immer eindeutig geklaert.",
-                "Entscheidungen koennen sich dadurch verzoegern oder werden mehrfach aufgegriffen.",
-                "Resultierende Zielkonflikte bleiben teilweise unausgesprochen und werden nicht systematisch bearbeitet.",
+                "In Ihrem Führungsteam sind Rollen, Mandate und Entscheidungswege nicht durchgängig geklärt.",
+                "Das führt dazu, dass Entscheidungen mehrfach aufgerufen werden und Themen keinen verbindlichen Abschluss finden.",
+                "Einzelne tragen Verantwortung ohne ausreichende Rückendeckung. Das kostet Energie und bremst die Umsetzung.",
             ],
             "Organisation": [
-                "In der Organisation sind Verantwortung und Orientierung im Alltag nicht immer eindeutig geklaert.",
-                "Entscheidungen koennen sich dadurch verzoegern oder werden mehrfach aufgegriffen.",
-                "Resultierende Zielkonflikte bleiben teilweise unausgesprochen und werden nicht systematisch bearbeitet.",
+                "In Ihrer Organisation sind Verantwortlichkeiten und Entscheidungswege nicht durchgängig geklärt.",
+                "Das führt dazu, dass Themen zwischen Rollen wandern und keinen verbindlichen Abschluss finden.",
+                "Initiativen verlieren unterwegs an Verbindlichkeit. Frustration entsteht, wo Klärung ausbleibt.",
             ],
         },
         "Stabil": {
             "Fuehrungsteam": [
-                "Im Fuehrungsteam sind Verantwortung, Sicherheit und Fuehrung grundsaetzlich tragfaehig ausgepraegt.",
-                "Zusammenarbeit ermoeglicht offene Klaerung und gemeinsame Wirksamkeit.",
+                "Ihr Führungsteam zeigt in allen drei Bereichen eine grundsätzlich tragfähige Zusammenarbeit.",
+                "Verantwortung ist klar, Spannungen können angesprochen werden und Orientierung ist spürbar.",
             ],
             "Organisation": [
-                "In der Organisation sind Verantwortung, Sicherheit und Fuehrung grundsaetzlich tragfaehig ausgepraegt.",
-                "Zusammenarbeit ermoeglicht offene Klaerung und bereichsuebergreifende Zusammenarbeit.",
+                "Ihre Organisation zeigt in allen drei Bereichen grundsätzlich tragfähige Strukturen.",
+                "Verantwortung wird übernommen, Spannungen können angesprochen werden und Führung gibt Orientierung.",
             ],
         },
         "Gemischtes Muster": {
             "Fuehrungsteam": [
-                "Im Fuehrungsteam zeigen sich sowohl stabile als auch spannungsanfaellige Muster.",
-                "Einzelne Bereiche funktionieren gut, waehrend andere inkonsistent oder klaerungsbeduerftig wirken.",
+                "Ihr Führungsteam zeigt ein gemischtes Bild: Einige Bereiche laufen gut, in anderen gibt es noch Klärungsbedarf.",
+                "Die kollektive Wirksamkeit des Teams ist noch nicht voll ausgeschöpft.",
             ],
             "Organisation": [
-                "In der Organisation zeigen sich sowohl stabile als auch spannungsanfaellige Muster.",
-                "Einzelne Bereiche funktionieren gut, waehrend andere inkonsistent oder klaerungsbeduerftig wirken.",
+                "Ihre Organisation zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf.",
+                "Unterschiedliche Dynamiken wirken parallel. Dies führt zu inkonsistenter Orientierung und Umsetzung.",
             ],
         },
     }
     return texte.get(muster, {}).get(kontext, [])
 
+
 def systemische_muster_texte(muster):
     texte = {
         "Anpassung": [
-            "Im Alltag wird Verantwortung haeufig einzelnen Personen zugeschrieben, ohne dass immer klar ist, wie sie strukturell verankert ist.",
-            "Auch Probleme werden eher einzelnen individuell zugerechnet als im Zusammenspiel von Rollen und Rahmenbedingungen betrachtet.",
-            "Konflikte bleiben oft unausgesprochen, waehrend Loyalitaet wichtiger erscheint als offene Klaerung.",
-            "Inhaltliche Themen und strategische Zielstellungen kommen langsamer voran, weil Zustaendigkeiten nicht immer eindeutig benannt sind.",
+            "Verantwortung wird im Alltag oft einzelnen Personen zugeschrieben, ohne dass klar ist wie sie strukturell verankert ist.",
+            "Probleme werden eher einzelnen angelastet, als im Zusammenspiel von Rollen und Rahmenbedingungen betrachtet.",
+            "Konflikte bleiben häufig unausgesprochen, Loyalität steht vor offener Klärung.",
+            "Strategische Themen kommen langsamer voran, weil Zuständigkeiten nicht eindeutig benannt sind.",
         ],
         "Schutz und Inkonsistenz": [
-            "Orientierung wirkt im Alltag nicht immer eindeutig. Erwartungen bleiben teilweise unausgesprochen.",
+            "Führung gibt im Alltag nicht immer eindeutige Orientierung, Erwartungen bleiben teilweise unausgesprochen.",
             "Mitarbeitende agieren daher eher vorsichtig und vermeiden es, Risiken offen anzusprechen.",
-            "Unklare oder ambivalente Kommunikation fuehrt eher zu Zurueckhaltung als zu Verantwortung.",
-            "Entscheidungen werden formal getroffen, aber nicht immer von allen innerlich mitgetragen.",
+            "Unklare Kommunikation führt zu Zurückhaltung statt zu Verantwortung.",
+            "Entscheidungen werden formal getroffen, aber nicht immer wirklich gemeinsam getragen.",
         ],
         "Strukturproblem": [
-            "Nicht immer ist klar, wer Entscheidungen treffen darf oder soll.",
-            "Verantwortung wird uebertragen, ohne dass Mandat oder Rueckendeckung vollstaendig gesichert sind.",
-            "Manche Themen wandern zwischen Rollen hin und her, ohne verbindlich abgeschlossen zu werden.",
-            "Partikularinteressen stehen gelegentlich staerker im Vordergrund als die gemeinsame Gesamtverantwortung.",
+            "Es ist nicht immer klar, wer Entscheidungen treffen darf oder soll.",
+            "Verantwortung wird übergeben, ohne dass Mandat und Rückendeckung vollständig gesichert sind.",
+            "Themen wandern zwischen Rollen, ohne verbindlich abgeschlossen zu werden.",
+            "Einzelinteressen stehen gelegentlich stärker im Vordergrund als die gemeinsame Verantwortung.",
         ],
         "Stabil": [
-            "Verantwortung ist klar zugeordnet und wird im Alltag sichtbar uebernommen.",
-            "Spannungen koennen offen angesprochen und konstruktiv bearbeitet werden.",
-            "Fuehrung gibt Orientierung, ohne in Mikromanagement zu verfallen.",
-            "Zusammenarbeit richtet sich erkennbar an gemeinsamen Zielen aus.",
+            "Verantwortung ist klar zugeordnet und wird im Alltag sichtbar übernommen.",
+            "Spannungen können offen angesprochen und konstruktiv bearbeitet werden.",
+            "Führung gibt Orientierung, ohne in Mikromanagement zu verfallen.",
+            "Die Zusammenarbeit richtet sich erkennbar an gemeinsamen Zielen aus.",
         ],
         "Gemischtes Muster": [
-            "Einige Bereiche wirken klar und stabil, andere eher unklar oder spannungsanfaellig.",
-            "Psychologische Sicherheit ist situativ vorhanden, aber nicht ueberall gleich ausgepraegt.",
-            "Fuehrung wirkt in Teilen orientierend, in anderen Bereichen uneinheitlich.",
+            "Einige Bereiche wirken klar und stabil, andere eher unklar oder spannungsanfällig.",
+            "Psychologische Sicherheit ist situativ vorhanden, aber nicht überall gleich ausgeprägt.",
+            "Führung wirkt in Teilen orientierend, in anderen Bereichen uneinheitlich.",
             "Entwicklungspotenzial liegt darin, diese unterschiedlichen Muster bewusster zu integrieren.",
         ],
     }
     return texte.get(muster, [])
 
+
 def entwicklungshebel(vd, ps, fw):
     hebel = []
     if vd < 3:
         hebel += [
-            "Verantwortungsdialog zwischen Rollen fuehren: wer entscheidet final, wer traegt die Umsetzung?",
-            "Gegenseitige Erwartungen explizit machen statt implizit voraussetzen.",
-            "Verantwortung strukturell verankern, nicht personalisieren.",
+            "Klären Sie gemeinsam, wer welche Entscheidungen trifft und wer die Umsetzung trägt.",
+            "Machen Sie gegenseitige Erwartungen explizit, statt sie stillschweigend vorauszusetzen.",
+            "Verankern Sie Verantwortung strukturell und nicht nur personenbezogen.",
         ]
     if ps < 3:
         hebel += [
-            "Fuehrung spricht Unsicherheiten, Fehler und Spannungen sichtbar an.",
-            "Implizite Risiken und Zielkonflikte koennen besprechbar gemacht werden.",
-            "Psychologische Sicherheit durch konsistentes Verhalten, nicht nur durch Appelle staerken.",
+            "Sprechen Sie als Führung Unsicherheiten und Fehler offen an. Das gibt anderen die Erlaubnis, es auch zu tun.",
+            "Schaffen Sie Räume, in denen kritische Themen ohne Konsequenzen benannt werden können.",
+            "Psychologische Sicherheit entsteht durch konsequentes Verhalten, nicht durch Appelle.",
         ]
     if fw < 3:
         hebel += [
-            "Fuehrung formuliert klare Erwartungen und priorisiert sichtbar.",
-            "Inkonsistenzen zwischen Anspruch und gelebter Praxis koennen gemeinsam reflektiert werden.",
-            "Gemeinsames Zielbild regelmaessig mit operativer Realitaet in Verbindung bringen.",
+            "Formulieren Sie klare Erwartungen und setzen Sie sichtbar Prioritäten.",
+            "Reflektieren Sie gemeinsam, wo Anspruch und gelebte Praxis auseinanderfallen.",
+            "Bringen Sie das gemeinsame Zielbild regelmäßig mit der operativen Realität in Verbindung.",
         ]
     if vd >= 3 and ps >= 3 and fw >= 3:
         hebel += [
-            "Bestehende Wirksamkeit gezielt weiterentwickeln statt nur stabilisieren.",
-            "Lernfaehigkeit und bereichsuebergreifende Zusammenarbeit weiter vertiefen.",
+            "Nutzen Sie die vorhandene Stabilität gezielt für Weiterentwicklung statt nur für Erhalt.",
+            "Vertiefen Sie bereichsübergreifende Zusammenarbeit und gemeinsames Lernen.",
         ]
     return hebel
 
-def gesamtbild(muster, kontext, auspraegung):
+
+def gesamtbild_texte(muster, kontext, auspraegung):
     texte = {
         "Stabil": {
             "Fuehrungsteam": [
-                "Das Fuehrungsteam wirkt insgesamt stabil mit guten Voraussetzungen fuer Weiterentwicklung.",
-                "Gemeinsame Orientierung und Verantwortung tragen zur kollektiven Fuehrungswirksamkeit bei.",
-                "Entwicklung kann dort ansetzen, wo vorhandene Staerken bewusst genutzt und weiter vertieft werden.",
+                "Ihr Führungsteam arbeitet auf einer tragfähigen Grundlage.",
+                "Gemeinsame Orientierung und klare Verantwortung ermöglichen kollektive Wirksamkeit.",
+                "Der nächste Schritt liegt darin, vorhandene Stärken bewusst zu nutzen und gezielt weiterzuentwickeln.",
             ],
             "Organisation": [
-                "Das System wirkt insgesamt stabil mit guten Voraussetzungen fuer Weiterentwicklung.",
-                "Verantwortung, Orientierung und Klaerung tragen zur gemeinsamen Wirksamkeit bei.",
-                "Entwicklung kann dort ansetzen, wo vorhandene Staerken bewusst genutzt und weiter vertieft werden.",
+                "Ihre Organisation arbeitet auf einer tragfähigen Grundlage.",
+                "Verantwortung, Orientierung und offene Klärung tragen zur gemeinsamen Wirksamkeit bei.",
+                "Der nächste Schritt liegt darin, vorhandene Stärken bewusst zu nutzen und gezielt weiterzuentwickeln.",
             ],
         },
         "Anpassung": {
             "Fuehrungsteam": [
-                "Das Fuehrungsteam wirkt eher spannungsgebunden und stabilisiert sich durch Anpassung statt Klaerung.",
-                "Unklare Erwartungshaltungen verlangsamen gemeinsame Ausrichtung und Wirksamkeit.",
-                "Entwicklung kann dort ansetzen, wo Verantwortung, Erwartungen und offene Klaerung im Fuehrungsteam gestaerkt werden.",
+                "Ihr Führungsteam stabilisiert sich derzeit eher durch Anpassung als durch offene Klärung.",
+                "Unklare Erwartungen und implizite Verantwortung bremsen die gemeinsame Ausrichtung.",
+                "Entwicklung setzt dort an, wo Verantwortung, Erwartungen und offene Klärung gestärkt werden.",
             ],
             "Organisation": [
-                "Das System wirkt eher spannungsgebunden und stabilisiert sich durch Anpassung statt Klaerung.",
-                "Unklare Verantwortung und zurueckhaltende Klaerung behindern gemeinsame Wirksamkeit.",
-                "Entwicklung kann dort ansetzen, wo Verantwortung, Erwartungen und offene Klaerung bewusster gestaerkt werden.",
+                "Ihre Organisation stabilisiert sich derzeit eher durch Anpassung als durch offene Klärung.",
+                "Unklare Verantwortung und zurückhaltende Kommunikation bremsen die gemeinsame Wirksamkeit.",
+                "Entwicklung setzt dort an, wo Verantwortung, Erwartungen und offene Klärung bewusster gestärkt werden.",
             ],
         },
         "Schutz und Inkonsistenz": {
             "Fuehrungsteam": [
-                "Das Fuehrungsteam zeigt Unsicherheit und inkonsistente Orientierung, wodurch kollektive Fuehrungswirksamkeit begrenzt bleibt.",
-                "Widerspruechliche Signale im Fuehrungshandeln foerdern eher Reaktivitaet als gemeinsame Ausrichtung.",
-                "Entwicklung kann dort ansetzen, wo Orientierung, Konsistenz und offene Rueckmeldung im Fuehrungsteam gestaerkt werden.",
+                "In Ihrem Führungsteam entsteht durch fehlende Sicherheit und inkonsistente Orientierung ein Muster, das kollektive Wirksamkeit einschränkt.",
+                "Widersprüchliche Signale im Führungshandeln fördern Reaktivität statt gemeinsame Ausrichtung.",
+                "Entwicklung setzt dort an, wo Orientierung, Konsistenz und offene Rückmeldung gestärkt werden.",
             ],
             "Organisation": [
-                "Das System zeigt Unsicherheit und inkonsistente Orientierung, wodurch kollektive Wirksamkeit begrenzt bleibt.",
-                "Widerspruechliche Signale und wechselnde Prioritaeten foerdern eher Reaktivitaet als gemeinsame Ausrichtung.",
-                "Entwicklung kann dort ansetzen, wo Orientierung, Konsistenz und offene Rueckmeldung bewusster gestaerkt werden.",
+                "In Ihrer Organisation entsteht durch fehlende Sicherheit und inkonsistente Führung ein Muster, das gemeinsame Wirksamkeit einschränkt.",
+                "Wechselnde Prioritäten und unklare Signale fördern Reaktivität statt Eigenverantwortung.",
+                "Entwicklung setzt dort an, wo Orientierung, Konsistenz und offene Rückmeldung bewusster gestärkt werden.",
             ],
         },
         "Strukturproblem": {
             "Fuehrungsteam": [
-                "Das Fuehrungsteam wirkt strukturell unklar, was kollektive Verantwortung und Umsetzung erschwert.",
-                "Unklare Rollen- und Entscheidungslogiken verhindern durchgaengige Verbindlichkeit.",
-                "Entwicklung kann dort ansetzen, wo Mandate, Entscheidungswege und kollektive Verantwortung geklaert werden.",
+                "Ihr Führungsteam arbeitet unter struktureller Unklarheit, die kollektive Verantwortung und Umsetzung erschwert.",
+                "Fehlende Klarheit über Rollen und Entscheidungswege verhindert durchgängige Verbindlichkeit.",
+                "Entwicklung setzt dort an, wo Mandate, Entscheidungswege und gemeinsame Verantwortung geklärt werden.",
             ],
             "Organisation": [
-                "Das System wirkt strukturell unklar, was Verantwortung und Umsetzung erschwert.",
-                "Unklare Rollen, Mandate und Entscheidungswege fuehren dazu, dass Themen nicht durchgaengig verbindlich vorankommen.",
-                "Entwicklung kann dort ansetzen, wo Verantwortung, Entscheidungslogik und strukturelle Klarheit bewusst gestaerkt werden.",
+                "Ihre Organisation arbeitet unter struktureller Unklarheit, die Verantwortung und Umsetzung erschwert.",
+                "Fehlende Klarheit über Rollen und Entscheidungswege führt dazu, dass Themen nicht verbindlich vorankommen.",
+                "Entwicklung setzt dort an, wo Verantwortung, Entscheidungslogik und strukturelle Klarheit bewusst gestärkt werden.",
             ],
         },
         "Gemischtes Muster": {
             "Fuehrungsteam": [
-                "Das Fuehrungsteam zeigt ein gemischtes Bild mit stabilen und spannungsanfaelligen Bereichen.",
-                "Unterschiedliche Fuehrungsdynamiken wirken parallel und fuehren zu inkonsistenter Ausrichtung.",
-                "Entwicklung kann dort ansetzen, wo diese Muster im Fuehrungsteam bewusster integriert werden.",
+                "Ihr Führungsteam zeigt ein gemischtes Bild mit stabilen und klärungsbedürftigen Bereichen.",
+                "Unterschiedliche Dynamiken wirken parallel und führen zu inkonsistenter Ausrichtung.",
+                "Entwicklung setzt dort an, wo diese Muster bewusster wahrgenommen und gemeinsam integriert werden.",
             ],
             "Organisation": [
-                "Das System zeigt ein gemischtes Bild mit stabilen und spannungsanfaelligen Bereichen.",
-                "Unterschiedliche Dynamiken wirken parallel und fuehren zu inkonsistenter Orientierung und Wirksamkeit.",
-                "Entwicklung kann dort ansetzen, wo diese Muster bewusster integriert und gemeinsam geklaert werden.",
+                "Ihre Organisation zeigt ein gemischtes Bild mit stabilen und klärungsbedürftigen Bereichen.",
+                "Unterschiedliche Dynamiken wirken parallel und führen zu inkonsistenter Orientierung.",
+                "Entwicklung setzt dort an, wo diese Muster bewusster wahrgenommen und gemeinsam geklärt werden.",
             ],
         },
     }
@@ -316,10 +319,10 @@ def gesamtbild(muster, kontext, auspraegung):
     zeilen = texte.get(muster, {}).get(kontext, [])
 
     auspraegung_satz = {
-        "stark": "Insgesamt wirken diese Muster derzeit stark ausgepraegt.",
-        "deutlich": "Insgesamt wirken diese Muster aktuell deutlich ausgepraegt.",
-        "punktuell": "Insgesamt zeigen sich diese Muster eher punktuell.",
-        "grundsaetzlich": "Insgesamt sind die tragfaehigen Muster gut ausgepraegt.",
+        "stark": "Diese Muster sind derzeit stark ausgeprägt und wirken sich spürbar auf den Alltag aus.",
+        "deutlich": "Diese Muster sind aktuell deutlich ausgeprägt.",
+        "punktuell": "Diese Muster zeigen sich bisher eher punktuell.",
+        "grundsaetzlich": "Die tragfähigen Muster sind insgesamt gut ausgeprägt.",
         "gemischt": "",
     }
     satz = auspraegung_satz.get(auspraegung, "")
@@ -327,14 +330,16 @@ def gesamtbild(muster, kontext, auspraegung):
         zeilen = zeilen + [satz]
     return zeilen
 
+
 def muster_staerke(vd, ps, fw):
     abweichung = abs(vd - 3) + abs(ps - 3) + abs(fw - 3)
     if abweichung < 1:
-        return "schwach ausgepraegt"
+        return "schwach ausgeprägt"
     elif abweichung < 2:
-        return "moderat ausgepraegt"
+        return "moderat ausgeprägt"
     else:
-        return "deutlich ausgepraegt"
+        return "deutlich ausgeprägt"
+
 
 def auspraegung_bestimmen(muster, vd, ps, fw):
     if muster == "Anpassung":
@@ -366,13 +371,14 @@ def auspraegung_bestimmen(muster, vd, ps, fw):
     else:
         return "gemischt"
 
-# ———————––
+
+# -------------------------
 # PDF-Generierung
-# ———————––
+# -------------------------
 
 def erstelle_pdf(vd, ps, fw, muster, kontext, sekundaer=None):
     """
-    Gibt ein BytesIO-Objekt mit dem fertigen PDF zurueck.
+    Gibt ein BytesIO-Objekt mit dem fertigen PDF zurück.
     Kann direkt als Download in Streamlit genutzt werden.
     """
     buffer = BytesIO()
@@ -391,15 +397,15 @@ def erstelle_pdf(vd, ps, fw, muster, kontext, sekundaer=None):
 
     # ---- Kopf ----
     story.append(Paragraph("Systemische Organisationsdiagnose", styles["titel"]))
-    story.append(Paragraph("Ergebnisbericht", styles["untertitel"]))
+    story.append(Paragraph("Ihr persönlicher Ergebnisbericht", styles["untertitel"]))
     story.append(hr())
 
     # Metadaten
     meta_data = [
         ["Kontext:", kontext],
         ["Datum:", datetime.now().strftime("%d.%m.%Y")],
-        ["Systemmuster:", muster],
-        ["Auspraegung:", muster_staerke(vd, ps, fw)],
+        ["Erkanntes Muster:", muster],
+        ["Ausprägung:", muster_staerke(vd, ps, fw)],
     ]
     meta_table = Table(meta_data, colWidths=[5 * cm, 11 * cm])
     meta_table.setStyle(TableStyle([
@@ -415,13 +421,13 @@ def erstelle_pdf(vd, ps, fw, muster, kontext, sekundaer=None):
 
     # ---- Scores ----
     story.append(hr())
-    story.append(Paragraph("Detailwerte", styles["section"]))
+    story.append(Paragraph("Ihre Ergebnisse im Überblick", styles["section"]))
 
     score_data = [
         ["Bereich", "Score (1–5)", "Einordnung"],
         ["Verantwortungslogik", str(round(vd, 2)), score_einordnung(vd)],
         ["Psychologische Sicherheit", str(round(ps, 2)), score_einordnung(ps)],
-        ["Fuehrungswirksamkeit", str(round(fw, 2)), score_einordnung(fw)],
+        ["Führungswirksamkeit", str(round(fw, 2)), score_einordnung(fw)],
     ]
     score_table = Table(score_data, colWidths=[7 * cm, 4 * cm, 5 * cm])
     score_table.setStyle(TableStyle([
@@ -439,79 +445,79 @@ def erstelle_pdf(vd, ps, fw, muster, kontext, sekundaer=None):
     story.append(Spacer(1, 0.3 * cm))
 
     # ---- Einordnung im Kontext ----
-    story.append(Paragraph("Einordnung im Kontext", styles["section"]))
+    story.append(Paragraph("Was die Ergebnisse bedeuten", styles["section"]))
     for zeile in einordnung_im_kontext(muster, kontext):
         story.append(bullet(zeile, styles))
     story.append(Spacer(1, 0.2 * cm))
 
     # ---- Systemische Muster ----
-    story.append(Paragraph("Systemische Muster", styles["section"]))
+    story.append(Paragraph("Wie sich das Muster im Alltag zeigt", styles["section"]))
     for zeile in systemische_muster_texte(muster):
         story.append(bullet(zeile, styles))
     story.append(Spacer(1, 0.2 * cm))
 
-    # ---- Sekundaeres Muster ----
+    # ---- Sekundäres Muster ----
     if sekundaer:
-        story.append(Paragraph("Sekundaeres Muster", styles["section"]))
+        story.append(Paragraph("Ergänzender Hinweis", styles["section"]))
         story.append(Paragraph(
-            f"Neben dem Hauptmuster zeigen sich ergaenzend Hinweise auf: <b>{sekundaer}</b>. "
-            "Dieses tritt weniger dominant auf, kann aber die Gesamtdynamik mitpraegen.",
+            f"Neben dem Hauptmuster zeigen sich ergänzend Hinweise auf: <b>{sekundaer}</b>. "
+            "Dieses Muster tritt weniger dominant auf, kann aber die Gesamtdynamik mitprägen "
+            "und sollte bei der Weiterentwicklung im Blick behalten werden.",
             styles["body"]
         ))
         story.append(Spacer(1, 0.2 * cm))
 
     # ---- Entwicklungshebel ----
-    story.append(Paragraph("Moegliche Entwicklungshebel", styles["section"]))
+    story.append(Paragraph("Mögliche Ansatzpunkte", styles["section"]))
     for zeile in entwicklungshebel(vd, ps, fw):
         story.append(bullet(zeile, styles))
     story.append(Spacer(1, 0.2 * cm))
 
     # ---- Gesamtbild ----
     story.append(Paragraph("Gesamtbild", styles["section"]))
-    for zeile in gesamtbild(muster, kontext, auspraegung):
+    for zeile in gesamtbild_texte(muster, kontext, auspraegung):
         story.append(bullet(zeile, styles))
-    story.append(Spacer(1, 0.2 * cm))
-
-    # ---- Weiteres Vorgehen ----
-    story.append(Paragraph("Weiteres Vorgehen", styles["section"]))
-    story.append(Paragraph(
-        "Der Bericht kann als Ausgangspunkt fuer gezielte Klaerung, Fuehrungsdialog oder "
-        "strukturelle Weiterentwicklung genutzt werden. Entscheidend ist, implizite Muster "
-        "sichtbar und besprechbar zu machen.",
-        styles["body"]
-    ))
     story.append(Spacer(1, 0.4 * cm))
 
     # ---- Trennlinie ----
     story.append(hr())
 
-    # ---- Ueber die Beraterin ----
-    story.append(Paragraph("Ueber die Beraterin", styles["section"]))
+    # ---- Einladender Abschluss ----
+    story.append(Paragraph("Wie geht es weiter?", styles["section"]))
     story.append(Paragraph(
-        "Anja Nestler ist systemische Organisationsberaterin und Business Coach. "
-        "Sie unterstuetzt Fuehrungsteams dabei, implizite Muster sichtbar zu machen "
-        "und konkrete Ansatzpunkte fuer Klaerung und Weiterentwicklung zu finden.",
+        "Dieser Bericht zeigt erste Muster, aber die eigentliche Wirkung entsteht "
+        "im gemeinsamen Gespräch. Was steckt wirklich hinter diesen Ergebnissen? "
+        "Wo liegen die konkreten Hebel für Ihre Situation?",
         styles["body"]
     ))
-    story.append(Spacer(1, 0.3 * cm))
+    story.append(Spacer(1, 0.2 * cm))
     story.append(Paragraph(
-        "Die Ergebnisse dieses Berichts geben erste Hinweise auf zugrunde liegende Dynamiken. "
-        "Die eigentliche Wirkung zeigt sich erfahrungsgemaess erst im gemeinsamen Blick "
-        "auf konkrete Situationen.",
+        "Ich begleite Führungsteams und Organisationen dabei, genau das herauszufinden – "
+        "und konkrete Schritte abzuleiten, die wirklich zur Situation passen.",
+        styles["einladend"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+    story.append(Paragraph(
+        "Ich freue mich auf das Gespräch mit Ihnen.",
+        styles["einladend"]
+    ))
+    story.append(Spacer(1, 0.2 * cm))
+    story.append(Paragraph(
+        "Anja Nestler – Systemische Organisationsberaterin &amp; Business Coach",
         styles["body"]
     ))
-    story.append(Spacer(1, 0.3 * cm))
+    story.append(Spacer(1, 0.1 * cm))
     story.append(Paragraph(
         "&#8594; <a href='https://calendly.com/anja-nestler/30min' color='#2E5090'>"
-        "Jetzt Einordnungsgespraech buchen</a>",
+        "Jetzt Einordnungsgespräch buchen</a>",
         styles["body"]
     ))
 
-    # ---- Footer-Hinweis ----
+    # ---- Footer ----
     story.append(Spacer(1, 0.6 * cm))
     story.append(Paragraph(
-        "Diese Diagnose ersetzt keine umfassende Organisationsanalyse. "
-        "Sie dient der ersten Orientierung und Reflexion.",
+        "Dieser Bericht basiert auf Ihrer Selbsteinschätzung und dient der ersten Orientierung. "
+        "Er ersetzt keine umfassende Organisationsanalyse.",
         styles["footer"]
     ))
 
