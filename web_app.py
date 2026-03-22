@@ -1,5 +1,31 @@
 import streamlit as st
+import gspread
+from google.oauth2.service_account import Credentials
+from datetime import datetime
 from diagnose_report import erstelle_pdf
+
+def schreibe_ins_sheet(mail, kontext, vd, ps, fw, muster, staerke):
+    try:
+        scopes = ["https://www.googleapis.com/auth/spreadsheets"]
+        creds = Credentials.from_service_account_info(
+            st.secrets["gcp_service_account"], scopes=scopes
+        )
+        client = gspread.authorize(creds)
+        sheet = client.open_by_key(st.secrets["sheets"]["sheet_id"]).sheet1
+        zeile = [
+            datetime.now().strftime("%d.%m.%Y"),
+            mail,
+            kontext,
+            round(vd, 2),
+            round(ps, 2),
+            round(fw, 2),
+            muster,
+            staerke,
+        ]
+        sheet.append_row(zeile)
+    except Exception:
+        pass
+
 
 from diagnose_engine import (
 
@@ -207,6 +233,17 @@ if st.session_state.bereich_index >= len(bereiche):
     mail = st.text_input("Ihre E-Mail-Adresse", placeholder="name@beispiel.de")
 
     if mail and "@" in mail:
+        if not st.session_state.get("sheet_geschrieben"):
+            schreibe_ins_sheet(
+                mail=mail,
+                kontext=st.session_state.get("kontext", "Organisation"),
+                vd=vd,
+                ps=ps,
+                fw=fw,
+                muster=muster,
+                staerke=diagnose.get("staerke", ""),
+            )
+            st.session_state.sheet_geschrieben = True
         pdf_buffer = erstelle_pdf(
             vd=vd,
             ps=ps,
