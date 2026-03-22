@@ -230,9 +230,20 @@ if st.session_state.bereich_index >= len(bereiche):
         "als PDF zum Speichern und Teilen."
     )
 
+    st.caption(
+        "Ihre E-Mail-Adresse wird ausschließlich zur Bereitstellung des Berichts "
+        "und für eine mögliche Kontaktaufnahme gespeichert. Keine Weitergabe an Dritte. "
+        "Weitere Informationen finden Sie in unserer "
+        "[Datenschutzerklärung](https://anjanestler.de/datenschutz/)."
+    )
+
+    datenschutz = st.checkbox(
+        "Ich habe die Datenschutzerklärung gelesen und bin mit der Verarbeitung meiner Daten einverstanden."
+    )
+
     mail = st.text_input("Ihre E-Mail-Adresse", placeholder="name@beispiel.de")
 
-    if mail and "@" in mail:
+    if mail and "@" in mail and datenschutz:
         if not st.session_state.get("sheet_geschrieben"):
             schreibe_ins_sheet(
                 mail=mail,
@@ -258,6 +269,8 @@ if st.session_state.bereich_index >= len(bereiche):
             file_name="organisationsdiagnose.pdf",
             mime="application/pdf",
         )
+    elif mail and not datenschutz:
+        st.caption("Bitte bestätigen Sie die Datenschutzerklärung.")
     elif mail:
         st.caption("Bitte eine gueltige E-Mail-Adresse eingeben.")
 
