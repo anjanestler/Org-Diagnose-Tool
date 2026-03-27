@@ -4,188 +4,132 @@ def diagnose_text(muster, kontext="Organisation", ton="reflexiv"):
     texte = {
         "Anpassung": {
             "Organisation":
-            """In Ihrer Organisation gibt es Hinweise darauf, dass Verantwortung oft nicht klar geregelt ist und dass Spannungen eher still getragen als offen geklärt werden. Das Ergebnis: Entscheidungen verzögern sich, Themen bleiben ohne Abschluss.
+            """In Ihrer Organisation gibt es Hinweise auf ein Anpassungsmuster: Spannungen werden eher still getragen als offen geklärt, Verantwortung bleibt häufig ungeklärt. Das ist kein Zeichen von schlechtem Willen – es ist ein Muster, das sich über Zeit eingeschlichen hat.
 
-Das ist kein Zeichen von schlechtem Willen. Es ist ein Muster, das sich eingeschlichen hat und das sich verändern lässt.
-
-Typische Anzeichen:
-- Zuständigkeiten sind unklar oder werden stillschweigend vorausgesetzt
+Erste Anzeichen:
+- Zuständigkeiten werden stillschweigend vorausgesetzt statt klar geregelt
 - Konflikte werden eher umgangen als direkt angesprochen
-- Loyalität steht oft vor offener Klärung
+- Loyalität steht häufig vor offener Klärung
 
-Was das im Alltag bedeutet:
-- Einzelne tragen überproportional viel Verantwortung
-- Themen kommen immer wieder auf den Tisch ohne echten Abschluss
-- Die Umsetzung von Entscheidungen stockt
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wie diese Muster in Ihrer konkreten Situation zusammenwirken und wo sinnvolle Ansatzpunkte liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an.""",
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
             "Fuehrungsteam":
-            """In Ihrem Führungsteam gibt es Hinweise darauf, dass Verantwortung nicht immer klar abgestimmt ist und dass Spannungen eher durch Anpassung als durch offene Klärung bewältigt werden.
+            """In Ihrem Führungsteam gibt es Hinweise auf ein Anpassungsmuster: Erwartungen bleiben oft implizit, Spannungen werden durch Anpassung bewältigt statt durch Klärung. Das ist kein Versagen einzelner Personen – es ist ein Muster, das sich über Zeit entwickelt hat.
 
-Das ist kein Versagen einzelner Personen. Es ist ein Muster, das sich über Zeit entwickelt und das sich verändern lässt.
-
-Typische Anzeichen:
+Erste Anzeichen:
 - Erwartungen bleiben implizit statt ausgesprochen
-- Themen werden besprochen aber selten wirklich abgeschlossen
-- Im Team wird Harmonie manchmal über Klarheit gestellt
+- Themen werden besprochen, aber selten wirklich abgeschlossen
+- Harmonie wird manchmal über Klarheit gestellt
 
-Was das im Alltag bedeutet:
-- Entscheidungen verzögern sich oder werden mehrfach neu aufgerollt
-- Die gemeinsame Ausrichtung leidet
-- Einzelne fühlen sich mit Verantwortung allein gelassen
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wie diese Muster in Ihrem Führungsteam zusammenwirken und wo sinnvolle Ansatzpunkte liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an."""
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken."""
         },
 
         "Schutz und Inkonsistenz": {
             "Organisation":
-            """In Ihrer Organisation gibt es Hinweise darauf, dass Mitarbeitende Ihnen nicht alles sagen – und dass die Signale, die Führung sendet, nicht immer einheitlich ankommen. Beides zusammen führt dazu, dass Mitarbeitende und mittlere Führungskräfte oft im Unklaren bleiben, was wirklich erwartet wird.
+            """Ihre Organisation zeigt Hinweise auf ein Muster aus Schutz und Inkonsistenz: Führungssignale kommen nicht einheitlich an, und gleichzeitig wird nicht alles nach oben kommuniziert. Das erzeugt Unklarheit darüber, was wirklich erwartet wird – kein Versagen einzelner Personen, sondern ein strukturelles Zusammenspiel.
 
-Das ist kein Versagen einzelner Personen. Es ist ein Muster, das sich über Zeit entwickelt und das sich verändern lässt.
-
-Typische Anzeichen:
-- Probleme werden wahrgenommen, aber selten direkt angesprochen
+Erste Anzeichen:
+- Probleme werden wahrgenommen, aber selten direkt nach oben kommuniziert
 - Prioritäten wirken von oben nicht immer einheitlich
 - Zwischen Führung und Organisation entsteht zunehmend Distanz
 
-Was das im Alltag bedeutet:
-- Entscheidungen werden getroffen, aber nicht von allen mitgetragen
-- Erwartungen werden unterschiedlich verstanden
-- Themen kommen immer wieder auf den Tisch ohne wirklichen Abschluss
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wie diese Muster in Ihrer konkreten Situation zusammenwirken und wo sinnvolle Ansatzpunkte liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an.""",
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
             "Fuehrungsteam":
-            """In Ihrem Führungsteam gibt es Hinweise darauf, dass nicht alles offen angesprochen wird – und dass die Signale, die Führung sendet, nicht immer einheitlich ankommen. Das verunsichert und führt dazu, dass man lieber vorsichtig ist als klar zu handeln.
+            """Ihr Führungsteam zeigt Hinweise auf ein Muster aus Schutz und Inkonsistenz: Nicht alles wird offen angesprochen, und die gemeinsame Ausrichtung wirkt nicht durchgängig stabil. Das führt dazu, dass vorsichtiges Handeln Klarheit ersetzt – kein Versagen einzelner Personen, sondern ein Muster, das sich über Zeit entwickelt hat.
 
-Das ist kein Versagen einzelner Personen. Es ist ein Muster das sich über Zeit entwickelt – und das sich verändern lässt.
-
-Typische Anzeichen:
-- Kritische Themen werden im Team eher umgangen
+Erste Anzeichen:
+- Kritische Themen werden im Team eher umgangen als angesprochen
 - Erwartungen werden unterschiedlich interpretiert
-- Die gemeinsame Ausrichtung wirkt nicht immer stabil
+- Die gemeinsame Ausrichtung wirkt situativ, nicht durchgängig
 
-Was das im Alltag bedeutet:
-- Entscheidungen werden formal getroffen, aber nicht wirklich gemeinsam getragen
-- Einzelne ziehen sich zurück oder agieren auf Sicherheit
-- Das Team kann sein Potenzial nicht voll entfalten
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wie diese Muster in Ihrem Führungsteam zusammenwirken und wo sinnvolle Ansatzpunkte liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an."""
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken."""
         },
 
         "Strukturproblem": {
             "Organisation":
-            """In Ihrer Organisation gibt es Hinweise darauf, dass Verantwortung und Entscheidungswege nicht klar genug geregelt sind. Themen wandern zwischen Rollen, Zuständigkeiten bleiben unklar und die Umsetzung stockt.
+            """Ihre Organisation zeigt Hinweise auf ein strukturelles Muster: Verantwortung und Entscheidungswege sind nicht klar genug geregelt, Themen wandern zwischen Rollen ohne Abschluss. Das ist kein Zeichen von mangelndem Engagement – es ist ein Muster, das sich strukturell klären lässt.
 
-Das ist kein Zeichen von mangelndem Engagement. Es ist ein strukturelles Muster, das sich klären lässt.
-
-Typische Anzeichen:
+Erste Anzeichen:
 - Es ist nicht immer klar, wer Entscheidungen treffen darf oder soll
 - Verantwortung wird übergeben, ohne dass Mandat und Rückendeckung gesichert sind
 - Themen werden mehrfach besprochen ohne verbindlichen Abschluss
 
-Was das im Alltag bedeutet:
-- Initiativen verlieren unterwegs an Verbindlichkeit
-- Frustration entsteht, weil Klärung ausbleibt
-- Einzelne fühlen sich verantwortlich, ohne wirklich entscheiden zu können
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wie diese Muster in Ihrer konkreten Situation zusammenwirken und wo sinnvolle Ansatzpunkte liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an.""",
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
             "Fuehrungsteam":
-            """In Ihrem Führungsteam gibt es Hinweise darauf, dass Rollen, Mandate und Entscheidungswege nicht durchgängig klar sind. Das erschwert verbindliche Zusammenarbeit und kostet Energie, die anderswo fehlt.
+            """Ihr Führungsteam zeigt Hinweise auf ein strukturelles Muster: Rollen, Mandate und Entscheidungswege sind nicht durchgängig klar, was verbindliche Zusammenarbeit erschwert. Das ist kein Zeichen von mangelndem Engagement – es ist ein Muster, das sich strukturell klären lässt.
 
-Das ist kein Zeichen von mangelndem Engagement. Es ist ein strukturelles Muster, das sich klären lässt.
-
-Typische Anzeichen:
+Erste Anzeichen:
 - Zuständigkeiten überlappen oder bleiben ungeklärt
 - Entscheidungen werden mehrfach aufgerufen ohne Abschluss
 - Einzelne tragen Verantwortung ohne ausreichende Rückendeckung
 
-Was das im Alltag bedeutet:
-- Die kollektive Führungswirksamkeit ist eingeschränkt
-- Themen zirkulieren im Team, ohne voranzukommen
-- Verbindlichkeit entsteht nicht verlässlich
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wie diese Muster in Ihrem Führungsteam zusammenwirken und wo sinnvolle Ansatzpunkte liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an."""
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken."""
         },
 
         "Stabil": {
             "Organisation":
-            """Ihre Organisation zeigt in allen drei Bereichen grundsätzlich tragfähige Strukturen. Verantwortung wird übernommen, Spannungen können angesprochen werden und Führung gibt Orientierung.
+            """Ihre Organisation zeigt in allen drei Bereichen grundsätzlich tragfähige Strukturen. Verantwortung wird übernommen, Spannungen können angesprochen werden, Führung gibt Orientierung. Das sind gute Voraussetzungen – und gleichzeitig der Punkt, an dem sich zeigt, wo das nächste Entwicklungsniveau liegt.
 
-Das sind gute Voraussetzungen – und ein solides Fundament für gezielte Weiterentwicklung.
+Erste Anzeichen:
+- Entscheidungen werden getroffen und auch umgesetzt
+- Spannungen können offen angesprochen werden
+- Strategische Orientierung ist im Alltag erkennbar
 
-Was das im Alltag bedeutet:
-- Entscheidungen kommen zu einem Abschluss
-- Themen werden offen und konstruktiv besprochen
-- Die Zusammenarbeit ist auf gemeinsame Ziele ausgerichtet
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wo liegen die nächsten Entwicklungsschritte? Und wie lassen sich die vorhandenen Stärken noch bewusster nutzen? Das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an.""",
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
             "Fuehrungsteam":
-            """Ihr Führungsteam zeigt in allen drei Bereichen grundsätzlich tragfähige Strukturen. Verantwortung ist klar, Spannungen können angesprochen werden und Orientierung ist spürbar.
+            """Ihr Führungsteam zeigt in allen drei Bereichen grundsätzlich tragfähige Strukturen. Verantwortung ist klar, Spannungen können angesprochen werden, Orientierung ist spürbar. Das sind gute Voraussetzungen – und gleichzeitig der Punkt, an dem sich zeigt, wo das nächste Entwicklungsniveau liegt.
 
-Das sind gute Voraussetzungen – und ein solides Fundament für gezielte Weiterentwicklung.
-
-Was das im Alltag bedeutet:
-- Gemeinsame Ausrichtung ist erkennbar
+Erste Anzeichen:
+- Gemeinsame Ausrichtung ist erkennbar und stabil
 - Konflikte werden konstruktiv bearbeitet
-- Das Team kann gemeinsam Führung übernehmen und wirksam gestalten
+- Das Team kann gemeinsam Führung übernehmen
 
-Wo liegen die nächsten Entwicklungsschritte? Und wie lassen sich die vorhandenen Stärken noch bewusster nutzen? Das lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Fordern Sie jetzt den ausführlichen Bericht an."""
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken."""
         },
 
         "Gemischtes Muster": {
             "Organisation":
-            """Ihre Organisation zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf. Das ist häufiger, als man denkt – und ein guter Ausgangspunkt für gezielte Entwicklung.
+            """Ihre Organisation zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf. Das ist häufiger als man denkt – und die Unterschiede selbst geben oft wichtige Hinweise darauf, was das System zusammenhält.
 
-Typische Anzeichen:
+Erste Anzeichen:
 - Manche Entscheidungen laufen reibungslos, andere stocken
 - Psychologische Sicherheit ist situativ vorhanden, aber nicht überall gleich
 - Führung wirkt in Teilen klar, in anderen Bereichen uneinheitlich
 
-Was das im Alltag bedeutet:
-- Die Zusammenarbeit ist von Bereich zu Bereich unterschiedlich
-- Potenzial liegt darin, die stabilen Muster bewusster zu nutzen
-- Klärungsbedarf in einzelnen Bereichen bremst das Gesamtsystem
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wie diese Muster in Ihrer konkreten Situation zusammenwirken und wo die wichtigsten Hebel liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an.""",
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
             "Fuehrungsteam":
-            """Ihr Führungsteam zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf. Das ist häufiger, als man denkt – und ein guter Ausgangspunkt für gezielte Entwicklung.
+            """Ihr Führungsteam zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf. Das ist häufiger als man denkt – und die Unterschiede selbst geben oft wichtige Hinweise darauf, was das Team zusammenhält.
 
-Typische Anzeichen:
+Erste Anzeichen:
 - In manchen Situationen läuft die Zusammenarbeit reibungslos, in anderen nicht
 - Verantwortung und Orientierung sind teilweise klar, teilweise noch offen
 - Das Team schöpft sein gemeinsames Potenzial noch nicht voll aus
 
-Was das im Alltag bedeutet:
-- Verschiedene Bereiche ziehen nicht immer am selben Strang
-- Einzelne Stärken werden noch nicht durchgängig genutzt
-- Gezielte Klärung könnte die Teamwirksamkeit deutlich steigern
+Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer Organisation stabil bleibt. Genau hier unterscheiden sich Organisationen oft deutlich.
 
-Wie diese Muster in Ihrem Führungsteam zusammenwirken und wo die wichtigsten Hebel liegen, lässt sich am besten im gemeinsamen Gespräch herausarbeiten.
-
-Fordern Sie jetzt den ausführlichen Bericht an."""
+Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken."""
         }
     }
 

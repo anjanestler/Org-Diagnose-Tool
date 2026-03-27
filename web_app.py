@@ -68,7 +68,6 @@ from diagnose_engine import (
 
     berechne_diagnose,
     score_einordnung,
-    typische_auswirkungen,
     einordnung_text
 
 )
@@ -223,14 +222,6 @@ if st.session_state.bereich_index >= len(bereiche):
     bereinigt = "\n".join(zeilen)
     for absatz in bereinigt.split("\n\n"):
         st.write(absatz.strip())
-    auswirkungen = typische_auswirkungen(muster)
-
-    if auswirkungen:
-
-        st.subheader("Typische Auswirkungen im Alltag")
-
-        st.markdown("\n".join(f"- {punkt}" for punkt in auswirkungen))
-
     st.subheader("Einordnung")
 
     st.write(einordnung_text())
