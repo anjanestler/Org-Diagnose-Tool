@@ -111,7 +111,7 @@ def typische_auswirkungen(muster):
 
 def einordnung_text():
     return (
-        "Die dargestellten Dynamiken sind in vielen Organisationen nicht ungewoehnlich. "
-        "Gleichzeitig zeigen Erfahrungen, dass sie sich selten allein durch individuelle Anpassung veraendern lassen. "
-        "Entscheidend ist, wie diese Muster im Fuehrungsteam gemeinsam verstanden und geklaert werden."
+        "Die dargestellten Dynamiken sind in vielen Organisationen nicht ungewöhnlich. "
+        "Gleichzeitig zeigen Erfahrungen, dass sie sich selten allein durch individuelle Anpassung verändern lassen. "
+        "Entscheidend ist, wie diese Muster im Führungsteam gemeinsam verstanden und geklärt werden."
     )
