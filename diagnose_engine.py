@@ -22,7 +22,7 @@ def bestimme_systemmuster(vd, ps, fw):
         return "Gemischtes Muster"
     
 def score_einordnung(score):
-    if score < 2:
+    if score < 3:
         return "niedrig"
     elif score < 3.5:
         return "mittel"
