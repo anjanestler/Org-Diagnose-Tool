@@ -53,11 +53,11 @@ def muster_staerke(vd, ps, fw):
     abweichung = abs(vd-3) + abs(ps-3) + abs(fw-3)
 
     if abweichung < 1:
-        return "schwach ausgepraegt"
+        return "schwach ausgeprägt"
     elif abweichung < 2:
-        return "moderat ausgepraegt"
+        return "moderat ausgeprägt"
     else:
-        return "deutlich ausgepraegt"
+        return "deutlich ausgeprägt"
     
 def sekundaeres_muster(vd, ps, fw, exclude=None):
     werte = {
@@ -83,27 +83,27 @@ def typische_auswirkungen(muster):
     texte = {
         "Anpassung": [
             "Entscheidungen werden mehrfach diskutiert, ohne klaren Abschluss.",
-            "Verantwortung wird teilweise uebernommen, aber nicht durchgaengig getragen.",
-            "Themen werden eher vorsichtig behandelt statt klar geklaert."
+            "Verantwortung wird teilweise übernommen, aber nicht durchgängig getragen.",
+            "Themen werden eher vorsichtig behandelt statt klar geklärt."
         ],
         "Schutz und Inkonsistenz": [
-            "Kritische Themen werden nicht durchgaengig offen angesprochen.",
+            "Kritische Themen werden nicht durchgängig offen angesprochen.",
             "Erwartungen werden unterschiedlich interpretiert.",
             "Entscheidungen sind formal getroffen, werden aber nicht einheitlich umgesetzt."
         ],
         "Strukturproblem": [
-            "Unklarheit darueber, wer Entscheidungen tatsaechlich trifft oder verantwortet.",
+            "Unklarheit darüber, wer Entscheidungen tatsächlich trifft oder verantwortet.",
             "Themen werden zwischen Rollen weitergegeben, ohne Abschluss.",
-            "Initiativen verlieren im Verlauf an Verbindlichkeit oder werden nicht konsequent weitergefuehrt."
+            "Initiativen verlieren im Verlauf an Verbindlichkeit oder werden nicht konsequent weitergeführt."
         ],
         "Stabil": [
-            "Verantwortung wird klar uebernommen und umgesetzt.",
-            "Themen werden offen angesprochen und geklaert.",
+            "Verantwortung wird klar übernommen und umgesetzt.",
+            "Themen werden offen angesprochen und geklärt.",
             "Zusammenarbeit ist auf gemeinsame Ziele ausgerichtet."
         ],
         "Gemischtes Muster": [
             "Einzelne Bereiche funktionieren gut, andere wirken hingegen unklar.",
-            "Entscheidungen sind teilweise klar, teilweise jedoch widerspruechlich.",
+            "Entscheidungen sind teilweise klar, teilweise jedoch widersprüchlich.",
             "Umsetzung variiert je nach Kontext und Beteiligten."
         ]
     }
