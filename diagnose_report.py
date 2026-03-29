@@ -129,7 +129,7 @@ def hr():
 def einordnung_im_kontext(muster, kontext):
     texte = {
         "Anpassung": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "In Ihrem Führungsteam ist nicht immer klar, wer Verantwortung tatsächlich trägt. Spannungen werden eher still bewältigt als offen geklärt.",
                 "Verantwortung liegt häufig bei Einzelnen, ohne dass das strukturell so vereinbart wäre.",
                 "So entsteht Zurückhaltung statt Klärung, und Themen bleiben länger offen als nötig.",
@@ -141,7 +141,7 @@ def einordnung_im_kontext(muster, kontext):
             ],
         },
         "Schutz und Inkonsistenz": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "In Ihrem Führungsteam wird nicht alles offen angesprochen, und die Signale, die Führung sendet, kommen nicht immer einheitlich an.",
                 "Erwartungen bleiben teilweise unklar oder werden unterschiedlich verstanden.",
                 "Das führt zu Vorsicht und Zurückhaltung statt zu klarer gemeinsamer Ausrichtung.",
@@ -153,7 +153,7 @@ def einordnung_im_kontext(muster, kontext):
             ],
         },
         "Strukturproblem": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "In Ihrem Führungsteam sind Rollen, Mandate und Entscheidungswege nicht durchgängig geklärt.",
                 "Das führt dazu, dass Entscheidungen mehrfach aufgerufen werden und Themen keinen verbindlichen Abschluss finden.",
                 "Einzelne tragen Verantwortung ohne ausreichende Rückendeckung. Das kostet Energie und bremst die Umsetzung.",
@@ -165,7 +165,7 @@ def einordnung_im_kontext(muster, kontext):
             ],
         },
         "Stabil": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "Ihr Führungsteam zeigt in allen drei Bereichen eine grundsätzlich tragfähige Zusammenarbeit.",
                 "Verantwortung ist klar, Spannungen können angesprochen werden und Orientierung ist spürbar.",
             ],
@@ -175,7 +175,7 @@ def einordnung_im_kontext(muster, kontext):
             ],
         },
         "Gemischtes Muster": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "Ihr Führungsteam zeigt ein gemischtes Bild: Einige Bereiche laufen gut, in anderen gibt es noch Klärungsbedarf.",
                 "Das Team schöpft sein gemeinsames Potenzial noch nicht voll aus.",
             ],
@@ -255,7 +255,7 @@ def entwicklungshebel(vd, ps, fw):
 def gesamtbild_texte(muster, kontext, auspraegung):
     texte = {
         "Stabil": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "Ihr Führungsteam arbeitet auf einer tragfähigen Grundlage.",
                 "Gemeinsame Orientierung und klare Verantwortung machen das Team handlungsfähig.",
                 "Der nächste Schritt liegt darin, vorhandene Stärken bewusst zu nutzen und gezielt weiterzuentwickeln.",
@@ -267,7 +267,7 @@ def gesamtbild_texte(muster, kontext, auspraegung):
             ],
         },
         "Anpassung": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "Ihr Führungsteam stabilisiert sich derzeit eher durch Anpassung als durch offene Klärung.",
                 "Unklare Erwartungen und implizite Verantwortung bremsen die gemeinsame Ausrichtung.",
                 "Entwicklung setzt dort an, wo Verantwortung, Erwartungen und offene Klärung gestärkt werden.",
@@ -279,7 +279,7 @@ def gesamtbild_texte(muster, kontext, auspraegung):
             ],
         },
         "Schutz und Inkonsistenz": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "In Ihrem Führungsteam entsteht durch mangelnde Offenheit und widersprüchliche Signale ein Muster, das gemeinsames Handeln erschwert.",
                 "Wenn Führung unterschiedliche Signale sendet, warten Mitarbeitende lieber ab – statt Verantwortung zu übernehmen.",
                 "Entwicklung setzt dort an, wo Orientierung, Konsistenz und offene Rückmeldung gestärkt werden.",
@@ -291,7 +291,7 @@ def gesamtbild_texte(muster, kontext, auspraegung):
             ],
         },
         "Strukturproblem": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "Ihr Führungsteam arbeitet unter struktureller Unklarheit, die kollektive Verantwortung und Umsetzung erschwert.",
                 "Fehlende Klarheit über Rollen und Entscheidungswege verhindert durchgängige Verbindlichkeit.",
                 "Entwicklung setzt dort an, wo Mandate, Entscheidungswege und gemeinsame Verantwortung geklärt werden.",
@@ -303,7 +303,7 @@ def gesamtbild_texte(muster, kontext, auspraegung):
             ],
         },
         "Gemischtes Muster": {
-            "Fuehrungsteam": [
+            "Führungsteam": [
                 "Ihr Führungsteam zeigt ein gemischtes Bild mit stabilen und klärungsbedürftigen Bereichen.",
                 "Verschiedene Bereiche ziehen nicht immer am selben Strang.",
                 "Entwicklung setzt dort an, wo diese Muster bewusster wahrgenommen und gemeinsam integriert werden.",

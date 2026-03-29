@@ -15,7 +15,7 @@ Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer 
 
 Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
-            "Fuehrungsteam":
+            "Führungsteam":
             """In Ihrem Führungsteam gibt es Hinweise auf ein Anpassungsmuster: Erwartungen bleiben oft implizit, Spannungen werden durch Anpassung bewältigt statt durch Klärung. Das ist kein Versagen einzelner Personen – es ist ein Muster, das sich über Zeit entwickelt hat.
 
 Erste Anzeichen:
@@ -41,7 +41,7 @@ Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer 
 
 Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
-            "Fuehrungsteam":
+            "Führungsteam":
             """Ihr Führungsteam zeigt Hinweise auf ein Muster aus Schutz und Inkonsistenz: Nicht alles wird offen angesprochen, und die gemeinsame Ausrichtung wirkt nicht durchgängig stabil. Das führt dazu, dass vorsichtiges Handeln Klarheit ersetzt – kein Versagen einzelner Personen, sondern ein Muster, das sich über Zeit entwickelt hat.
 
 Erste Anzeichen:
@@ -67,7 +67,7 @@ Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer 
 
 Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
-            "Fuehrungsteam":
+            "Führungsteam":
             """Ihr Führungsteam zeigt Hinweise auf ein strukturelles Muster: Rollen, Mandate und Entscheidungswege sind nicht durchgängig klar, was verbindliche Zusammenarbeit erschwert. Das ist kein Zeichen von mangelndem Engagement – es ist ein Muster, das sich strukturell klären lässt.
 
 Erste Anzeichen:
@@ -93,7 +93,7 @@ Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer 
 
 Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
-            "Fuehrungsteam":
+            "Führungsteam":
             """Ihr Führungsteam zeigt in allen drei Bereichen grundsätzlich tragfähige Strukturen. Verantwortung ist klar, Spannungen können angesprochen werden, Orientierung ist spürbar. Das sind gute Voraussetzungen – und gleichzeitig der Punkt, an dem sich zeigt, wo das nächste Entwicklungsniveau liegt.
 
 Erste Anzeichen:
@@ -119,7 +119,7 @@ Entscheidend ist jedoch nicht das Muster selbst – sondern wodurch es in Ihrer 
 
 Im ausführlichen Bericht sehen Sie: welche Dynamiken Ihr Ergebnis konkret antreiben, warum sich das Muster im Alltag stabilisiert und welche Ansatzpunkte erfahrungsgemäß tatsächlich wirken.""",
 
-            "Fuehrungsteam":
+            "Führungsteam":
             """Ihr Führungsteam zeigt ein gemischtes Bild: Einige Bereiche funktionieren gut, in anderen gibt es noch Klärungsbedarf. Das ist häufiger als man denkt – und die Unterschiede selbst geben oft wichtige Hinweise darauf, was das Team zusammenhält.
 
 Erste Anzeichen:

@@ -169,7 +169,7 @@ if not st.session_state.gestartet:
 
         "Kontext der Diagnose:",
 
-        ["Organisation", "Fuehrungsteam"]
+        ["Organisation", "Führungsteam"]
 
     )
     if st.button("Diagnose starten"):

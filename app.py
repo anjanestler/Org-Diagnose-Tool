@@ -343,9 +343,9 @@ tk.Radiobutton(
 
 tk.Radiobutton(
     kontext_frame,
-    text="Fuehrungsteam",
+    text="Führungsteam",
     variable=kontext_var,
-    value="Fuehrungsteam"
+    value="Führungsteam"
 
 ).pack()
 
