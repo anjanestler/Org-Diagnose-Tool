@@ -342,6 +342,7 @@ wert = st.slider(
     key=f"slider_{st.session_state.bereich_index}_{st.session_state.frage_index}"
 
 )
+st.caption("1 = Gar nicht zutreffend · 2 = Eher nicht zutreffend · 3 = Teilweise zutreffend · 4 = Eher zutreffend · 5 = Völlig zutreffend")
 
 
 if st.button("Weiter"):
